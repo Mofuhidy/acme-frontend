@@ -1,24 +1,45 @@
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export default function Home() {
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center bg-background px-6 py-24 text-center">
-      <div className="mx-auto flex max-w-2xl flex-col items-center gap-6">
-        <p className="rounded-full bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground">
-          Whitepace SaaS Landing Page
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-          Project scaffold is ready for feature branches.
-        </h1>
-        <p className="text-base leading-7 text-muted-foreground sm:text-lg">
-          Next.js, TypeScript, Tailwind CSS, and shadcn/ui are configured. The
-          Figma-matched landing sections will be implemented through the planned
-          feature PR flow.
-        </p>
-        <Button asChild size="lg">
-          <a href="#next-step">Ready for the first feature PR</a>
-        </Button>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main id="main-content" className="flex-1 bg-background">
+        <section className="border-b bg-brand-navy py-24 text-white sm:py-32">
+          <Container className="text-center">
+            <SectionHeading
+              as="h1"
+              align="center"
+              eyebrow="Whitepace SaaS Landing Page"
+              title="Design-system shell is ready."
+              description="The shared layout, navigation, footer, brand tokens, and reusable UI wrappers are in place for the Figma-matched feature sections."
+              inverse
+            />
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 rounded-lg bg-brand-blue px-7 text-base text-white hover:bg-brand-blue/90"
+              >
+                <a href="#next-step">Start feature sections</a>
+              </Button>
+              <Button
+                asChild
+                variant="secondary"
+                size="lg"
+                className="h-12 rounded-lg bg-brand-yellow px-7 text-base text-brand-ink hover:bg-brand-yellow/90"
+              >
+                <a href="#footer">Review structure</a>
+              </Button>
+            </div>
+          </Container>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
