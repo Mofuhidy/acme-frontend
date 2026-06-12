@@ -38,7 +38,7 @@ function Pricing() {
     const gap = 32; // gap-8 is 2rem = 32px
     container.scrollTo({
       left: index * (cardWidth + gap),
-      behavior: "smooth"
+      behavior: "smooth",
     });
     setActiveIndex(index);
   };
@@ -59,7 +59,9 @@ function Pricing() {
             <HighlightedHeading text="Choose Your Plan" />
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Whether you want to get organized, keep your personal life on track, or boost workplace productivity, whitepace has the right plan for you.
+            Whether you want to get organized, keep your personal life on track,
+            or boost workplace productivity, Evernote has the right plan for
+            you.
           </p>
         </Reveal>
 
@@ -68,8 +70,7 @@ function Pricing() {
           ref={containerRef}
           onScroll={handleScroll}
           className="mt-16 flex lg:grid lg:grid-cols-3 gap-8 overflow-x-auto snap-x snap-mandatory lg:overflow-x-visible pb-8 lg:pb-0 scrollbar-none scroll-smooth px-4 -mx-4 lg:px-0 lg:mx-0"
-          style={{ msOverflowStyle: "none", scrollbarWidth: "none" }}
-        >
+          style={{ msOverflowStyle: "none", scrollbarWidth: "none" }}>
           {pricing.map((plan, index) => {
             const isPersonal = plan.isPopular;
 
@@ -77,57 +78,41 @@ function Pricing() {
               <div
                 key={plan.name}
                 data-card-index={index}
-                className="w-[85vw] sm:w-[380px] lg:w-auto shrink-0 snap-center flex flex-col"
-              >
+                className="w-[85vw] sm:w-[380px] lg:w-auto shrink-0 snap-center flex flex-col">
                 <div
                   className={`flex flex-col h-full rounded-[2rem] border px-8 py-10 transition duration-300 hover:-translate-y-1 ${
                     isPersonal
-                      ? "border-brand-blue bg-[#043873] text-white shadow-2xl shadow-brand-navy/35 lg:scale-105"
-                      : "border-slate-200 bg-white text-brand-ink shadow-sm hover:shadow-xl hover:shadow-slate-200/50"
-                  }`}
-                >
-                  <h3 className="text-xl font-bold">{plan.name}</h3>
+                      ? "border-slate-100 bg-white text-[#043873] shadow-[0_20px_50px_rgba(0,0,0,0.08)] lg:scale-105"
+                      : "border-2 border-brand-yellow bg-white text-brand-ink shadow-sm hover:shadow-xl hover:shadow-slate-200/50"
+                  }`}>
+                  <h3
+                    className={`text-xl font-bold ${isPersonal ? "text-[#043873]" : "text-brand-ink"}`}>
+                    {plan.name}
+                  </h3>
                   <div className="mt-5 flex items-baseline gap-2">
                     <span
                       className={`text-4xl font-bold tracking-tight sm:text-5xl ${
-                        isPersonal ? "text-brand-yellow" : "text-brand-ink"
-                      }`}
-                    >
+                        isPersonal ? "text-[#043873]" : "text-brand-ink"
+                      }`}>
                       {plan.price}
                     </span>
                   </div>
                   <p
                     className={`mt-4 text-sm font-semibold leading-6 ${
-                      isPersonal ? "text-white/80" : "text-slate-500"
-                    }`}
-                  >
+                      isPersonal ? "text-[#043873]/80" : "text-slate-500"
+                    }`}>
                     {plan.description}
                   </p>
 
-                  <div className="mt-8">
-                    <Button
-                      asChild
-                      variant={isPersonal ? "default" : "outline"}
-                      className={`h-12 w-full rounded-xl px-6 font-semibold shadow-sm transition duration-200 ${
-                        isPersonal
-                          ? "bg-brand-blue text-white hover:bg-brand-blue/90"
-                          : "border-slate-300 text-brand-ink hover:bg-slate-50"
-                      }`}
-                    >
-                      <a href="#hero">{plan.buttonLabel}</a>
-                    </Button>
-                  </div>
-
                   <ul
                     className={`mt-8 space-y-4 text-sm leading-6 ${
-                      isPersonal ? "text-white/84" : "text-slate-600"
-                    }`}
-                  >
-                    {plan.features.map((feature) => (
+                      isPersonal ? "text-[#043873]/90" : "text-slate-600"
+                    }`}>
+                    {plan.features.map(feature => (
                       <li key={feature} className="flex gap-x-3">
                         <Check
                           className={`size-5 shrink-0 ${
-                            isPersonal ? "text-brand-yellow" : "text-brand-blue"
+                            isPersonal ? "text-brand-blue" : "text-brand-ink"
                           }`}
                           aria-hidden="true"
                         />
@@ -135,6 +120,18 @@ function Pricing() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-8">
+                    <Button
+                      asChild
+                      variant={isPersonal ? "default" : "outline"}
+                      className={`h-12  rounded-xl px-6 font-semibold shadow-sm transition duration-200 ${
+                        isPersonal
+                          ? "bg-brand-blue text-white hover:bg-brand-blue/90"
+                          : "border-brand-yellow text-brand-ink hover:bg-slate-50"
+                      }`}>
+                      <a href="#hero">{plan.buttonLabel}</a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             );

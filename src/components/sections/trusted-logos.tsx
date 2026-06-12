@@ -30,6 +30,7 @@ function TrustedLogos() {
                     src={logo.src}
                     alt={logo.name}
                     fill
+                    sizes="(max-width: 640px) 50vw, 160px"
                     className="object-contain"
                     loading="lazy"
                   />

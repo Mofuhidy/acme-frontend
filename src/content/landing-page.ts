@@ -11,6 +11,7 @@ export type NavItem = {
 
 export type FooterGroup = {
   title: string;
+  href: string;
   links: {
     label: string;
     href: string;
@@ -156,7 +157,11 @@ export const siteConfig = {
   } satisfies HeroContent,
   trustedLogos: [
     { name: "Apple", shortName: "Apple", src: "/sponsors/Apple.png" },
-    { name: "Microsoft", shortName: "Microsoft", src: "/sponsors/Microsoft.png" },
+    {
+      name: "Microsoft",
+      shortName: "Microsoft",
+      src: "/sponsors/Microsoft.png",
+    },
     { name: "Slack", shortName: "Slack", src: "/sponsors/Slack.png" },
     { name: "Google", shortName: "Google", src: "/sponsors/Google.png" },
   ] satisfies TrustedLogo[],
@@ -170,9 +175,9 @@ export const siteConfig = {
       href: "#project-management",
       image: {
         src: "/feature-project-management.svg",
-        alt: "Project board with task cards and progress indicators",
-        width: 840,
-        height: 620,
+        alt: "Whitepace dashboard showing project progress, tasks, and team activity",
+        width: 1080,
+        height: 760,
       },
     },
     {
@@ -293,7 +298,8 @@ export const siteConfig = {
     {
       value: "320k+",
       label: "Active teams",
-      description: "Planning launches, client work, operations, and internal projects.",
+      description:
+        "Planning launches, client work, operations, and internal projects.",
     },
     {
       value: "14M",
@@ -303,7 +309,8 @@ export const siteConfig = {
     {
       value: "42%",
       label: "Faster planning",
-      description: "Less time chasing updates and more time moving work forward.",
+      description:
+        "Less time chasing updates and more time moving work forward.",
     },
     {
       value: "99.9%",
@@ -461,6 +468,7 @@ export const siteConfig = {
   footerGroups: [
     {
       title: "Product",
+      href: "#features",
       links: [
         { label: "Overview", href: "#features" },
         { label: "Integrations", href: "#integrations" },
@@ -469,6 +477,7 @@ export const siteConfig = {
     },
     {
       title: "Resources",
+      href: "#resources",
       links: [
         { label: "Articles", href: "#resources" },
         { label: "Testimonials", href: "#testimonials" },
@@ -477,6 +486,7 @@ export const siteConfig = {
     },
     {
       title: "Company",
+      href: "#hero",
       links: [
         { label: "About", href: "#hero" },
         { label: "Contact", href: "mailto:hello@whitepace.example" },

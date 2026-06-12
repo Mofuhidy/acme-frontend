@@ -85,13 +85,16 @@ function MobileNav({ activeSection }: { activeSection: string }) {
         <Button
           variant="ghost"
           size="icon-lg"
-          className="text-brand-blue hover:bg-slate-100 hover:text-brand-blue lg:hidden"
+          className="text-brand-navy hover:bg-slate-100 hover:text-brand-blue lg:hidden"
           aria-label="Open navigation menu"
         >
           <Menu className="size-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[86vw] border-white/10 p-0">
+      <SheetContent
+        side="right"
+        className="w-screen max-w-full border-white/10 p-0 min-[360px]:w-[86vw] min-[360px]:max-w-sm"
+      >
         <SheetHeader className="border-b p-5 text-left">
           <SheetTitle>{siteConfig.name}</SheetTitle>
           <SheetDescription>{siteConfig.description}</SheetDescription>
@@ -140,7 +143,7 @@ function Navbar() {
   const activeSection = useActiveSection();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/88">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/88">
       <Container className="flex h-20 items-center justify-between gap-6">
         <BrandMark />
         <DesktopNav activeSection={activeSection} />
