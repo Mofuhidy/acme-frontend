@@ -11,9 +11,9 @@ function Cta() {
   const { cta } = siteConfig;
 
   return (
-    <section id="cta" className="relative isolate overflow-hidden bg-brand-navy py-20 text-white sm:py-28">
-      <div className="absolute left-0 top-0 bottom-0 -z-10 pointer-events-none select-none h-full overflow-hidden">
-        <CtaWaves className="h-full w-auto object-left" />
+    <section id="cta" className="relative isolate overflow-visible bg-brand-navy py-20 text-white sm:py-28">
+      <div className="absolute -left-16 -top-12 -bottom-12 -z-10 pointer-events-none select-none sm:-left-20 md:-left-24">
+        <CtaWaves className="h-[calc(100%+6rem)] w-auto" />
       </div>
       <Container>
         <Reveal className="mx-auto max-w-4xl text-center">

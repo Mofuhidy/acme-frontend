@@ -19,7 +19,7 @@ export function HighlightedHeading({ text, className, highlightColor = "text-bra
           return (
             <span key={index} className="relative inline-block whitespace-nowrap">
               {part}
-              <YellowDash className={`absolute -bottom-2.5 left-0 w-full h-auto ${highlightColor}`} />
+              <YellowDash className={`absolute left-[5%] right-0 bottom-[10%] w-[95%] h-auto z-0 ${highlightColor}`} />
             </span>
           );
         }
