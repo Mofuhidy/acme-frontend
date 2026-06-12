@@ -37,6 +37,7 @@ function Resources() {
                   <a
                     href={resource.href}
                     className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-blue outline-none transition hover:gap-3 focus-visible:ring-3 focus-visible:ring-brand-blue/35"
+                    aria-label={`Read more about ${resource.label.toLowerCase()}: ${resource.title}`}
                   >
                     Read more
                     <ArrowRight className="size-4" />

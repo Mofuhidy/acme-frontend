@@ -22,7 +22,7 @@ function Testimonials() {
             const isBlue = index > 0;
 
             return (
-              <Reveal key={testimonial.author} delay={index * 90}>
+              <Reveal key={`${testimonial.author}-${index}`} delay={index * 90}>
                 <figure
                   className={`flex h-full flex-col rounded-[2rem] p-8 shadow-xl transition duration-300 hover:-translate-y-1 ${
                     isBlue
@@ -41,6 +41,7 @@ function Testimonials() {
                         alt={testimonial.author}
                         fill
                         className="object-cover"
+                        sizes="48px"
                         loading="lazy"
                       />
                     </div>

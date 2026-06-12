@@ -5,6 +5,22 @@ export const metadata: Metadata = {
   title: "Whitepace - SaaS Landing Page",
   description:
     "A production-quality SaaS landing page built with Next.js, Tailwind CSS, and shadcn/ui.",
+  metadataBase: new URL("https://white-frontend-3232xdvre-mofuhidys-projects.vercel.app"),
+  openGraph: {
+    title: "Whitepace - SaaS Landing Page",
+    description:
+      "A production-quality SaaS landing page built with Next.js, Tailwind CSS, and shadcn/ui.",
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Whitepace",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Whitepace - SaaS Landing Page",
+    description:
+      "A production-quality SaaS landing page built with Next.js, Tailwind CSS, and shadcn/ui.",
+  },
 };
 
 export default function RootLayout({

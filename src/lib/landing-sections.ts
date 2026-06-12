@@ -1,11 +1,12 @@
 const LANDING_SECTION_IDS = [
   "hero",
-  "trusted-logos",
   "features",
   "pricing",
+  "cta",
+  "your-data",
+  "trusted-logos",
   "integrations",
   "testimonials",
-  "cta",
   "footer",
 ] as const;
 
@@ -13,9 +14,11 @@ const TRACKED_SECTION_IDS = [
   "hero",
   "features",
   "pricing",
+  "cta",
+  "your-data",
+  "trusted-logos",
   "integrations",
   "testimonials",
-  "cta",
 ] as const;
 
 type LandingSectionId = (typeof LANDING_SECTION_IDS)[number];

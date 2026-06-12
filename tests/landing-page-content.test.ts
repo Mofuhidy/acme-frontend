@@ -84,21 +84,24 @@ assert.ok(siteConfig.cta.primaryCta.href.startsWith("#"));
 
 assert.deepEqual(LANDING_SECTION_IDS, [
   "hero",
-  "trusted-logos",
   "features",
   "pricing",
+  "cta",
+  "your-data",
+  "trusted-logos",
   "integrations",
   "testimonials",
-  "cta",
   "footer",
 ]);
 assert.deepEqual(TRACKED_SECTION_IDS, [
   "hero",
   "features",
   "pricing",
+  "cta",
+  "your-data",
+  "trusted-logos",
   "integrations",
   "testimonials",
-  "cta",
 ]);
 
 console.log("landing page content contract ok");

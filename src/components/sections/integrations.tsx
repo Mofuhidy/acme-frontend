@@ -24,7 +24,8 @@ function Integrations() {
               alt={integrations.image.alt}
               width={integrations.image.width}
               height={integrations.image.height}
-              className="h-auto w-full object-contain max-w-[500px] lg:max-w-none"
+              className="h-auto w-full object-contain max-w-[500px] lg:max-w-none animate-float"
+              sizes="(max-width: 1024px) 100vw, 550px"
               loading="lazy"
             />
           </div>
@@ -49,7 +50,10 @@ function Integrations() {
               size="lg"
               className="h-12 w-full sm:w-auto rounded-lg bg-brand-blue px-6 text-white hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/10 transition-transform duration-200 hover:-translate-y-0.5"
             >
-              <a href={integrations.cta.href}>
+              <a
+                href={integrations.cta.href}
+                aria-label="Read more about Whitepace app integrations"
+              >
                 {integrations.cta.label}
                 <ArrowRight className="size-4" />
               </a>
