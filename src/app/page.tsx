@@ -1,7 +1,14 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { Cta } from "@/components/sections/cta";
 import { Features } from "@/components/sections/features";
+import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
+import { HowItWorks } from "@/components/sections/how-it-works";
+import { Integrations } from "@/components/sections/integrations";
+import { Resources } from "@/components/sections/resources";
+import { Statistics } from "@/components/sections/statistics";
+import { Testimonials } from "@/components/sections/testimonials";
 import { TrustedLogos } from "@/components/sections/trusted-logos";
 
 export default function Home() {
@@ -12,6 +19,13 @@ export default function Home() {
         <Hero />
         <TrustedLogos />
         <Features />
+        <Integrations />
+        <Statistics />
+        <HowItWorks />
+        <Testimonials />
+        <Resources />
+        <Cta />
+        <Faq />
       </main>
       <Footer />
     </>

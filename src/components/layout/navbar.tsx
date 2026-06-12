@@ -138,13 +138,13 @@ function Navbar() {
             variant="secondary"
             className="h-11 rounded-lg bg-brand-yellow px-5 text-brand-ink hover:bg-brand-yellow/90"
           >
-            <a href="#login">Login</a>
+            <a href="#pricing">Login</a>
           </Button>
           <Button
             asChild
             className="h-11 rounded-lg bg-brand-blue px-5 text-white hover:bg-brand-blue/90"
           >
-            <a href="#cta">
+            <a href="#pricing">
               Try Whitepace free
               <ArrowRight className="size-4" />
             </a>

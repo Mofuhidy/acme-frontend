@@ -56,6 +56,63 @@ export type Feature = {
   };
 };
 
+export type IntegrationsContent = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  cta: {
+    label: string;
+    href: string;
+  };
+  apps: {
+    name: string;
+    category: string;
+  }[];
+};
+
+export type Statistic = {
+  value: string;
+  label: string;
+  description: string;
+};
+
+export type ProcessStep = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+};
+
+export type Resource = {
+  label: string;
+  title: string;
+  description: string;
+  href: string;
+};
+
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+export type CtaContent = {
+  title: string;
+  description: string;
+  primaryCta: {
+    label: string;
+    href: string;
+  };
+  secondaryCta: {
+    label: string;
+    href: string;
+  };
+};
+
 export const siteConfig = {
   name: "whitepace",
   description:
@@ -131,6 +188,151 @@ export const siteConfig = {
       },
     },
   ] satisfies Feature[],
+  integrations: {
+    eyebrow: "Your apps, connected",
+    title: "Bring every workflow into one calm workspace",
+    description:
+      "Whitepace connects planning, notes, messaging, files, and delivery tools so teams can keep context close without forcing a full rebuild of their stack.",
+    cta: {
+      label: "Explore integrations",
+      href: "#integrations",
+    },
+    apps: [
+      { name: "Slack", category: "Messaging" },
+      { name: "Google Drive", category: "Files" },
+      { name: "Figma", category: "Design" },
+      { name: "GitHub", category: "Engineering" },
+      { name: "Jira", category: "Delivery" },
+      { name: "Notion", category: "Docs" },
+      { name: "Zoom", category: "Meetings" },
+      { name: "HubSpot", category: "Sales" },
+    ],
+  } satisfies IntegrationsContent,
+  statistics: [
+    {
+      value: "320k+",
+      label: "Active teams",
+      description: "Planning launches, client work, operations, and internal projects.",
+    },
+    {
+      value: "14M",
+      label: "Tasks organized",
+      description: "Tasks, notes, and decisions captured with clear ownership.",
+    },
+    {
+      value: "42%",
+      label: "Faster planning",
+      description: "Less time chasing updates and more time moving work forward.",
+    },
+    {
+      value: "99.9%",
+      label: "Uptime",
+      description: "Reliable workspaces for teams that need consistent access.",
+    },
+  ] satisfies Statistic[],
+  howItWorks: [
+    {
+      step: "01",
+      title: "Capture the work",
+      description:
+        "Create projects, import notes, and turn open ideas into visible tasks with owners, due dates, and priority.",
+    },
+    {
+      step: "02",
+      title: "Align the team",
+      description:
+        "Share updates, connect files, and keep comments beside the exact work they explain so handoffs stay clear.",
+    },
+    {
+      step: "03",
+      title: "Deliver with confidence",
+      description:
+        "Use live status, progress views, and decision history to ship work without surprise blockers or scattered follow-ups.",
+    },
+  ] satisfies ProcessStep[],
+  testimonials: [
+    {
+      quote:
+        "Whitepace gave our distributed team a single operating rhythm. Planning meetings are shorter and project updates are finally easy to trust.",
+      author: "Maya Chen",
+      role: "Head of Operations, BrightLabs",
+    },
+    {
+      quote:
+        "The dashboard feels focused without being rigid. We can manage client launches, creative reviews, and weekly reporting from the same workspace.",
+      author: "Omar Haddad",
+      role: "Founder, Northstar Studio",
+    },
+    {
+      quote:
+        "Our engineering and marketing teams stopped duplicating status notes. Everyone sees the same source of truth before decisions are made.",
+      author: "Sofia Rivera",
+      role: "VP Product, Flowstate",
+    },
+  ] satisfies Testimonial[],
+  resources: [
+    {
+      label: "Guide",
+      title: "Build a cleaner project intake process",
+      description:
+        "A practical checklist for turning requests, notes, and priorities into work your team can actually execute.",
+      href: "#resources",
+    },
+    {
+      label: "Template",
+      title: "Weekly team planning board",
+      description:
+        "A lightweight planning structure for sprint work, client delivery, and cross-functional initiatives.",
+      href: "#resources",
+    },
+    {
+      label: "Article",
+      title: "How high-trust teams document decisions",
+      description:
+        "Simple documentation habits that reduce meeting load and make handoffs easier across time zones.",
+      href: "#resources",
+    },
+  ] satisfies Resource[],
+  cta: {
+    title: "Start organizing your team with whitepace",
+    description:
+      "Create a shared workspace for projects, docs, goals, and decisions. Invite your team and get your first workflow running in minutes.",
+    primaryCta: {
+      label: "Try Whitepace free",
+      href: "#pricing",
+    },
+    secondaryCta: {
+      label: "See how it works",
+      href: "#how-it-works",
+    },
+  } satisfies CtaContent,
+  faqs: [
+    {
+      question: "Can Whitepace replace our current project tracker?",
+      answer:
+        "Yes. Teams can use Whitepace as the primary place for project planning, task ownership, notes, decisions, and launch visibility.",
+    },
+    {
+      question: "Does it work for distributed teams?",
+      answer:
+        "Whitepace is designed for async collaboration with shared context, clear ownership, and status views that reduce meeting dependency.",
+    },
+    {
+      question: "Can we connect our existing tools?",
+      answer:
+        "The integration model keeps files, messages, design work, and delivery updates close to the projects they support.",
+    },
+    {
+      question: "Is there a free trial?",
+      answer:
+        "The landing page flow points teams to a free trial CTA so they can test a workspace before committing to a rollout.",
+    },
+    {
+      question: "Will dark mode be included?",
+      answer:
+        "Dark mode is planned as the final visual pass after the light theme sections, interactions, and performance polish are complete.",
+    },
+  ] satisfies Faq[],
   navItems: [
     {
       label: "Products",
