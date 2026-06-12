@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 
 import { siteConfig } from "@/content/landing-page";
+import {
+  LANDING_SECTION_IDS,
+  TRACKED_SECTION_IDS,
+} from "@/lib/landing-sections";
 
 assert.equal(siteConfig.hero.badge, "Get More Done with whitepace");
 assert.match(siteConfig.hero.title, /Project Management/i);
@@ -69,5 +73,30 @@ assert.ok(
 assert.equal(siteConfig.cta.title, "Start organizing your team with whitepace");
 assert.ok(siteConfig.cta.primaryCta.href.startsWith("#"));
 assert.ok(siteConfig.cta.secondaryCta.href.startsWith("#"));
+
+assert.deepEqual(LANDING_SECTION_IDS, [
+  "hero",
+  "trusted-logos",
+  "features",
+  "integrations",
+  "statistics",
+  "how-it-works",
+  "testimonials",
+  "resources",
+  "pricing",
+  "faq",
+  "footer",
+]);
+assert.deepEqual(TRACKED_SECTION_IDS, [
+  "hero",
+  "features",
+  "integrations",
+  "statistics",
+  "how-it-works",
+  "testimonials",
+  "resources",
+  "pricing",
+  "faq",
+]);
 
 console.log("landing page content contract ok");

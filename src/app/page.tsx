@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { Cta } from "@/components/sections/cta";
 import { Features } from "@/components/sections/features";
 import { Faq } from "@/components/sections/faq";
@@ -14,6 +15,7 @@ import { TrustedLogos } from "@/components/sections/trusted-logos";
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main id="main-content" className="flex-1 bg-background">
         <Hero />

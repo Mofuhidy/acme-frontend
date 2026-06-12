@@ -7,6 +7,7 @@ import { siteConfig } from "@/content/landing-page";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { useActiveSection } from "@/components/layout/use-active-section";
 import {
   Sheet,
   SheetClose,
@@ -33,16 +34,21 @@ function BrandMark() {
   );
 }
 
-function DesktopNav() {
+function DesktopNav({ activeSection }: { activeSection: string }) {
   return (
     <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
       {siteConfig.navItems.map((item) => (
         <div key={item.label} className="group relative">
           <a
             href={item.href}
+            aria-current={
+              item.href === `#${activeSection}` ? "page" : undefined
+            }
             className={cn(
               "inline-flex h-11 items-center gap-1 rounded-lg px-3 text-sm font-medium text-white/84 transition-colors",
-              "hover:bg-white/10 hover:text-white focus-visible:bg-white/10 focus-visible:text-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white/30"
+              "hover:bg-white/10 hover:text-white focus-visible:bg-white/10 focus-visible:text-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white/30",
+              item.href === `#${activeSection}` &&
+                "bg-white/12 text-white shadow-inner shadow-white/5"
             )}
           >
             {item.label}
@@ -74,7 +80,7 @@ function DesktopNav() {
   );
 }
 
-function MobileNav() {
+function MobileNav({ activeSection }: { activeSection: string }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -98,7 +104,13 @@ function MobileNav() {
               <SheetClose asChild>
                 <a
                   href={item.href}
-                  className="flex min-h-11 items-center justify-between rounded-xl px-3 text-base font-semibold text-brand-ink transition-colors hover:bg-background focus-visible:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25"
+                  aria-current={
+                    item.href === `#${activeSection}` ? "page" : undefined
+                  }
+                  className={cn(
+                    "flex min-h-11 items-center justify-between rounded-xl px-3 text-base font-semibold text-brand-ink transition-colors hover:bg-background focus-visible:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25",
+                    item.href === `#${activeSection}` && "bg-background"
+                  )}
                 >
                   {item.label}
                   <ArrowRight className="size-4" />
@@ -127,11 +139,13 @@ function MobileNav() {
 }
 
 function Navbar() {
+  const activeSection = useActiveSection();
+
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-brand-navy/95 backdrop-blur supports-[backdrop-filter]:bg-brand-navy/88">
       <Container className="flex h-20 items-center justify-between gap-6">
         <BrandMark />
-        <DesktopNav />
+        <DesktopNav activeSection={activeSection} />
         <div className="hidden items-center gap-3 lg:flex">
           <Button
             asChild
@@ -150,7 +164,7 @@ function Navbar() {
             </a>
           </Button>
         </div>
-        <MobileNav />
+        <MobileNav activeSection={activeSection} />
       </Container>
     </header>
   );
