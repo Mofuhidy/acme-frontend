@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import Image from "next/image";
 
 import { siteConfig } from "@/content/landing-page";
 import { Container } from "@/components/ui/container";
@@ -26,9 +27,20 @@ function Testimonials() {
                 <blockquote className="mt-6 flex-1 text-lg leading-8 text-brand-ink">
                   {`"${testimonial.quote}"`}
                 </blockquote>
-                <figcaption className="mt-8 border-t border-slate-200 pt-5">
-                  <p className="font-bold text-brand-ink">{testimonial.author}</p>
-                  <p className="mt-1 text-sm text-slate-500">{testimonial.role}</p>
+                <figcaption className="mt-8 border-t border-slate-200 pt-5 flex items-center gap-3">
+                  <div className="relative size-11 overflow-hidden rounded-full ring-2 ring-slate-100 shrink-0">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={testimonial.author}
+                      fill
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold text-brand-ink leading-tight">{testimonial.author}</p>
+                    <p className="mt-1 text-sm text-slate-500">{testimonial.role}</p>
+                  </div>
                 </figcaption>
               </figure>
             </Reveal>

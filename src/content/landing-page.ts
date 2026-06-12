@@ -40,6 +40,7 @@ export type HeroContent = {
 export type TrustedLogo = {
   name: string;
   shortName: string;
+  src: string;
 };
 
 export type Feature = {
@@ -86,6 +87,7 @@ export type Testimonial = {
   quote: string;
   author: string;
   role: string;
+  avatar: string;
 };
 
 export type Resource = {
@@ -138,11 +140,10 @@ export const siteConfig = {
     },
   } satisfies HeroContent,
   trustedLogos: [
-    { name: "Apple", shortName: "Apple" },
-    { name: "Microsoft", shortName: "Microsoft" },
-    { name: "Slack", shortName: "Slack" },
-    { name: "Google", shortName: "Google" },
-    { name: "Notion", shortName: "Notion" },
+    { name: "Apple", shortName: "Apple", src: "/sponsors/Apple.png" },
+    { name: "Microsoft", shortName: "Microsoft", src: "/sponsors/Microsoft.png" },
+    { name: "Slack", shortName: "Slack", src: "/sponsors/Slack.png" },
+    { name: "Google", shortName: "Google", src: "/sponsors/Google.png" },
   ] satisfies TrustedLogo[],
   features: [
     {
@@ -167,7 +168,7 @@ export const siteConfig = {
         "Bring notes, comments, files, and decisions beside the work itself so every teammate understands what changed and why.",
       href: "#work-together",
       image: {
-        src: "/feature-work-together.svg",
+        src: "/work-together.png",
         alt: "Team collaboration illustration with connected teammates and shared notes",
         width: 840,
         height: 620,
@@ -183,6 +184,20 @@ export const siteConfig = {
       image: {
         src: "/feature-extension.svg",
         alt: "Integration cards connecting Whitepace with workplace apps",
+        width: 840,
+        height: 620,
+      },
+    },
+    {
+      id: "your-data",
+      eyebrow: "100% your data",
+      title: "The app is open source. Your data is yours.",
+      description:
+        "The data is stored locally and is 100% private. Your projects, notes, and activity are protected by default.",
+      href: "#features",
+      image: {
+        src: "/element.png",
+        alt: "100% your data security graphic",
         width: 840,
         height: 620,
       },
@@ -256,18 +271,21 @@ export const siteConfig = {
         "Whitepace gave our distributed team a single operating rhythm. Planning meetings are shorter and project updates are finally easy to trust.",
       author: "Maya Chen",
       role: "Head of Operations, BrightLabs",
+      avatar: "/avatars/avatar-1.png",
     },
     {
       quote:
         "The dashboard feels focused without being rigid. We can manage client launches, creative reviews, and weekly reporting from the same workspace.",
       author: "Omar Haddad",
       role: "Founder, Northstar Studio",
+      avatar: "/avatars/avatar-2.png",
     },
     {
       quote:
         "Our engineering and marketing teams stopped duplicating status notes. Everyone sees the same source of truth before decisions are made.",
       author: "Sofia Rivera",
       role: "VP Product, Flowstate",
+      avatar: "/avatars/avatar-3.png",
     },
   ] satisfies Testimonial[],
   resources: [

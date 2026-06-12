@@ -11,13 +11,13 @@ assert.match(siteConfig.hero.title, /Project Management/i);
 assert.ok(siteConfig.hero.primaryCta.href.startsWith("#"));
 assert.ok(siteConfig.hero.secondaryCta.href.startsWith("#"));
 
-assert.equal(siteConfig.trustedLogos.length, 5);
+assert.equal(siteConfig.trustedLogos.length, 4);
 assert.ok(siteConfig.trustedLogos.every((logo) => logo.name.length > 0));
 
-assert.equal(siteConfig.features.length, 3);
+assert.equal(siteConfig.features.length, 4);
 assert.deepEqual(
   siteConfig.features.map((feature) => feature.id),
-  ["project-management", "work-together", "extension"]
+  ["project-management", "work-together", "extension", "your-data"]
 );
 assert.ok(
   siteConfig.features.every(
