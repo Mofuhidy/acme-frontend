@@ -1,27 +1,38 @@
+import Image from "next/image";
 import { siteConfig } from "@/content/landing-page";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { HighlightedHeading } from "@/components/ui/highlighted-heading";
 
 function TrustedLogos() {
   return (
     <section
       id="trusted-logos"
       aria-labelledby="trusted-logos-title"
-      className="border-b bg-white py-10"
+      className="bg-white py-20 sm:py-28"
     >
-      <Container>
-        <Reveal className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <Container className="flex flex-col items-center gap-16">
+        <Reveal>
           <h2
             id="trusted-logos-title"
-            className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 lg:text-left"
+            className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl text-center leading-tight"
           >
-            Trusted by productive teams
+            <HighlightedHeading text="Our sponsors" />
           </h2>
-          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-5 lg:min-w-[720px]">
+        </Reveal>
+
+        <Reveal delay={90} className="w-full">
+          <ul className="grid grid-cols-2 items-center justify-items-center gap-12 sm:grid-cols-4 w-full max-w-5xl mx-auto">
             {siteConfig.trustedLogos.map((logo) => (
-              <li key={logo.name}>
-                <div className="grid h-16 place-items-center rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm font-bold text-brand-navy transition duration-200 hover:-translate-y-0.5 hover:border-brand-blue/40 hover:bg-brand-blue-light">
-                  <span aria-label={logo.name}>{logo.shortName}</span>
+              <li key={logo.name} className="flex justify-center w-full">
+                <div className="relative h-14 w-full max-w-[160px] transition-transform duration-300 hover:scale-105">
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    fill
+                    className="object-contain"
+                    loading="lazy"
+                  />
                 </div>
               </li>
             ))}

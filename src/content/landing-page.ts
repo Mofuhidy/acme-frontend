@@ -40,6 +40,7 @@ export type HeroContent = {
 export type TrustedLogo = {
   name: string;
   shortName: string;
+  src: string;
 };
 
 export type Feature = {
@@ -60,6 +61,12 @@ export type IntegrationsContent = {
   eyebrow: string;
   title: string;
   description: string;
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   cta: {
     label: string;
     href: string;
@@ -86,6 +93,7 @@ export type Testimonial = {
   quote: string;
   author: string;
   role: string;
+  avatar: string;
 };
 
 export type Resource = {
@@ -113,15 +121,24 @@ export type CtaContent = {
   };
 };
 
+export type PricingPlan = {
+  name: string;
+  price: string;
+  description: string;
+  buttonLabel: string;
+  isPopular?: boolean;
+  features: string[];
+};
+
 export const siteConfig = {
   name: "whitepace",
   description:
     "Project management and team collaboration software for productive work.",
   hero: {
     badge: "Get More Done with whitepace",
-    title: "Project Management Software That Keeps Teams in Sync",
+    title: "Get More Done with whitepace",
     description:
-      "Whitepace brings projects, notes, goals, and collaboration into one focused workspace so teams can plan clearly and move faster.",
+      "Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks",
     primaryCta: {
       label: "Try Whitepace free",
       href: "#features",
@@ -138,19 +155,18 @@ export const siteConfig = {
     },
   } satisfies HeroContent,
   trustedLogos: [
-    { name: "Apple", shortName: "Apple" },
-    { name: "Microsoft", shortName: "Microsoft" },
-    { name: "Slack", shortName: "Slack" },
-    { name: "Google", shortName: "Google" },
-    { name: "Notion", shortName: "Notion" },
+    { name: "Apple", shortName: "Apple", src: "/sponsors/Apple.png" },
+    { name: "Microsoft", shortName: "Microsoft", src: "/sponsors/Microsoft.png" },
+    { name: "Slack", shortName: "Slack", src: "/sponsors/Slack.png" },
+    { name: "Google", shortName: "Google", src: "/sponsors/Google.png" },
   ] satisfies TrustedLogo[],
   features: [
     {
       id: "project-management",
       eyebrow: "Project management",
-      title: "Organize every project from idea to launch",
+      title: "Project Management",
       description:
-        "Create shared plans, assign ownership, track milestones, and keep important work visible without scattering updates across tools.",
+        "Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly from the app. Take photos with the mobile app and save them to a note.",
       href: "#project-management",
       image: {
         src: "/feature-project-management.svg",
@@ -162,40 +178,105 @@ export const siteConfig = {
     {
       id: "work-together",
       eyebrow: "Work together",
-      title: "Collaborate with context, not chaos",
+      title: "Work together",
       description:
-        "Bring notes, comments, files, and decisions beside the work itself so every teammate understands what changed and why.",
+        "With whitepace, share your notes with your colleagues and collaborate on them. You can also publish a note to the internet and share the URL with others.",
       href: "#work-together",
       image: {
-        src: "/feature-work-together.svg",
+        src: "/work-together.png",
         alt: "Team collaboration illustration with connected teammates and shared notes",
-        width: 840,
-        height: 620,
+        width: 710,
+        height: 661,
       },
     },
     {
       id: "extension",
-      eyebrow: "Use as extension",
-      title: "Connect your existing workflow",
+      eyebrow: "Customise",
+      title: "Customise it to your needs",
       description:
-        "Plug Whitepace into the apps your team already trusts and keep your operating rhythm consistent across every department.",
+        "Customise the app with plugins, custom themes and multiple text editors (Rich Text or Markdown). Or create your own scripts and plugins using the Extension API.",
       href: "#integrations",
       image: {
-        src: "/feature-extension.svg",
-        alt: "Integration cards connecting Whitepace with workplace apps",
-        width: 840,
-        height: 620,
+        src: "/favorite-apps.png",
+        alt: "Whitepace favorite apps integration orbit",
+        width: 759,
+        height: 400,
+      },
+    },
+    {
+      id: "your-data",
+      eyebrow: "100% your data",
+      title: "100% your data",
+      description:
+        "The app is open source and your notes are saved to an open format, so you'll always have access to them. Uses End-To-End Encryption (E2EE) to secure your notes and ensure no-one but yourself can access them.",
+      href: "#features",
+      image: {
+        src: "/element.png",
+        alt: "100% your data security graphic",
+        width: 759,
+        height: 400,
       },
     },
   ] satisfies Feature[],
+  pricing: [
+    {
+      name: "Free",
+      price: "$0",
+      description: "Capture ideas and find them quickly",
+      buttonLabel: "Get Started",
+      features: [
+        "Sync unlimited devices",
+        "10 GB monthly uploads",
+        "200 MB max. note size",
+        "Customize Home dashboard and access extra widgets",
+        "Connect primary Google Calendar account",
+        "Add due dates, reminders, and notifications to your tasks",
+      ],
+    },
+    {
+      name: "Personal",
+      price: "$11.99",
+      description: "Keep home and family on track",
+      buttonLabel: "Get Started",
+      isPopular: true,
+      features: [
+        "Sync unlimited devices",
+        "10 GB monthly uploads",
+        "200 MB max. note size",
+        "Customize Home dashboard and access extra widgets",
+        "Connect primary Google Calendar account",
+        "Add due dates, reminders, and notifications to your tasks",
+      ],
+    },
+    {
+      name: "Organization",
+      price: "$49.99",
+      description: "Capture ideas and find them quickly",
+      buttonLabel: "Get Started",
+      features: [
+        "Sync unlimited devices",
+        "10 GB monthly uploads",
+        "200 MB max. note size",
+        "Customize Home dashboard and access extra widgets",
+        "Connect primary Google Calendar account",
+        "Add due dates, reminders, and notifications to your tasks",
+      ],
+    },
+  ] satisfies PricingPlan[],
   integrations: {
-    eyebrow: "Your apps, connected",
-    title: "Bring every workflow into one calm workspace",
+    eyebrow: "",
+    title: "Work with Your Favorite Apps Using whitepace",
     description:
-      "Whitepace connects planning, notes, messaging, files, and delivery tools so teams can keep context close without forcing a full rebuild of their stack.",
+      "Whitepace teams up with your favorite software. Integrate with over 1000+ apps with Zapier to have all the tools you need for your project success.",
+    image: {
+      src: "/favorite-apps.png",
+      alt: "Whitepace connected apps orbit illustration",
+      width: 759,
+      height: 400,
+    },
     cta: {
-      label: "Explore integrations",
-      href: "#integrations",
+      label: "Read more",
+      href: "#pricing",
     },
     apps: [
       { name: "Slack", category: "Messaging" },
@@ -253,21 +334,24 @@ export const siteConfig = {
   testimonials: [
     {
       quote:
-        "Whitepace gave our distributed team a single operating rhythm. Planning meetings are shorter and project updates are finally easy to trust.",
-      author: "Maya Chen",
-      role: "Head of Operations, BrightLabs",
+        "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
+      author: "Jessie Owner",
+      role: "Founder, XYZ Company",
+      avatar: "/testimonials/avatar-1.png",
     },
     {
       quote:
-        "The dashboard feels focused without being rigid. We can manage client launches, creative reviews, and weekly reporting from the same workspace.",
-      author: "Omar Haddad",
-      role: "Founder, Northstar Studio",
+        "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
+      author: "Jessie Owner",
+      role: "Founder, XYZ Company",
+      avatar: "/testimonials/avatar-2.png",
     },
     {
       quote:
-        "Our engineering and marketing teams stopped duplicating status notes. Everyone sees the same source of truth before decisions are made.",
-      author: "Sofia Rivera",
-      role: "VP Product, Flowstate",
+        "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
+      author: "Jessie Owner",
+      role: "Founder, XYZ Company",
+      avatar: "/testimonials/avatar-3.png",
     },
   ] satisfies Testimonial[],
   resources: [
@@ -294,11 +378,11 @@ export const siteConfig = {
     },
   ] satisfies Resource[],
   cta: {
-    title: "Start organizing your team with whitepace",
+    title: "Your work, everywhere you are",
     description:
-      "Create a shared workspace for projects, docs, goals, and decisions. Invite your team and get your first workflow running in minutes.",
+      "Access your notes from your computer, phone or tablet by synchronising with various services, including whitepace, Dropbox and OneDrive. The app is available on Windows, macOS, Linux, Android and iOS. A terminal app is also available!",
     primaryCta: {
-      label: "Try Whitepace free",
+      label: "Try Taskey",
       href: "#pricing",
     },
     secondaryCta: {

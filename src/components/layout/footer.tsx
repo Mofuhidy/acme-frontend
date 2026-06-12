@@ -5,20 +5,16 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Separator } from "@/components/ui/separator";
 
+import { Logo } from "@/components/ui/logo";
+
 function Footer() {
   return (
     <footer id="footer" className="bg-brand-navy text-white">
       <Container className="py-16 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div className="max-w-md">
-            <div className="flex items-center gap-2.5">
-              <span className="relative grid size-8 place-items-center">
-                <span className="absolute h-5 w-5 rotate-45 rounded-[5px] bg-white" />
-                <span className="absolute h-4 w-4 -translate-x-1 -translate-y-1 rotate-45 rounded-[4px] bg-brand-blue" />
-              </span>
-              <span className="text-xl font-bold tracking-tight">
-                {siteConfig.name}
-              </span>
+            <div className="flex items-center">
+              <Logo variant="light" className="h-6.5 w-auto sm:h-7.5" />
             </div>
             <p className="mt-5 text-base leading-7 text-white/72">
               {siteConfig.description}

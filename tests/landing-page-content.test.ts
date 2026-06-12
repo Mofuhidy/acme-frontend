@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 
 import { siteConfig } from "@/content/landing-page";
 import {
@@ -6,25 +8,30 @@ import {
   TRACKED_SECTION_IDS,
 } from "@/lib/landing-sections";
 
+const publicPath = (src: string) => join(process.cwd(), "public", src);
+const publicAssetExists = (src: string) => existsSync(publicPath(src));
+
 assert.equal(siteConfig.hero.badge, "Get More Done with whitepace");
-assert.match(siteConfig.hero.title, /Project Management/i);
+assert.match(siteConfig.hero.title, /Get More Done/i);
 assert.ok(siteConfig.hero.primaryCta.href.startsWith("#"));
 assert.ok(siteConfig.hero.secondaryCta.href.startsWith("#"));
 
-assert.equal(siteConfig.trustedLogos.length, 5);
+assert.equal(siteConfig.trustedLogos.length, 4);
 assert.ok(siteConfig.trustedLogos.every((logo) => logo.name.length > 0));
+assert.ok(siteConfig.trustedLogos.every((logo) => publicAssetExists(logo.src)));
 
-assert.equal(siteConfig.features.length, 3);
+assert.equal(siteConfig.features.length, 4);
 assert.deepEqual(
   siteConfig.features.map((feature) => feature.id),
-  ["project-management", "work-together", "extension"]
+  ["project-management", "work-together", "extension", "your-data"]
 );
 assert.ok(
   siteConfig.features.every(
     (feature) =>
       feature.title.length > 0 &&
       feature.description.length > 0 &&
-      feature.href.startsWith("#")
+      feature.href.startsWith("#") &&
+      publicAssetExists(feature.image.src)
   )
 );
 
@@ -32,6 +39,7 @@ assert.ok(siteConfig.integrations, "integrations content is required");
 assert.equal(siteConfig.integrations.apps.length, 8);
 assert.ok(siteConfig.integrations.apps.every((app) => app.name.length > 0));
 assert.ok(siteConfig.integrations.cta.href.startsWith("#"));
+assert.ok(publicAssetExists(siteConfig.integrations.image.src));
 
 assert.deepEqual(
   siteConfig.statistics.map((stat) => stat.label),
@@ -51,7 +59,8 @@ assert.ok(
     (testimonial) =>
       testimonial.quote.length > 0 &&
       testimonial.author.length > 0 &&
-      testimonial.role.length > 0
+      testimonial.role.length > 0 &&
+      publicAssetExists(testimonial.avatar)
   )
 );
 
@@ -70,33 +79,26 @@ assert.ok(
   siteConfig.faqs.every((faq) => faq.question.length > 0 && faq.answer.length > 0)
 );
 
-assert.equal(siteConfig.cta.title, "Start organizing your team with whitepace");
+assert.equal(siteConfig.cta.title, "Your work, everywhere you are");
 assert.ok(siteConfig.cta.primaryCta.href.startsWith("#"));
-assert.ok(siteConfig.cta.secondaryCta.href.startsWith("#"));
 
 assert.deepEqual(LANDING_SECTION_IDS, [
   "hero",
   "trusted-logos",
   "features",
-  "integrations",
-  "statistics",
-  "how-it-works",
-  "testimonials",
-  "resources",
   "pricing",
-  "faq",
+  "integrations",
+  "testimonials",
+  "cta",
   "footer",
 ]);
 assert.deepEqual(TRACKED_SECTION_IDS, [
   "hero",
   "features",
-  "integrations",
-  "statistics",
-  "how-it-works",
-  "testimonials",
-  "resources",
   "pricing",
-  "faq",
+  "integrations",
+  "testimonials",
+  "cta",
 ]);
 
 console.log("landing page content contract ok");

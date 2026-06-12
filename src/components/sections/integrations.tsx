@@ -1,82 +1,59 @@
-import {
-  ArrowRight,
-  Blocks,
-  Check,
-  Cloud,
-  Code2,
-  FileText,
-  MessageSquare,
-  PenTool,
-  Video,
-  Zap,
-} from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 import { siteConfig } from "@/content/landing-page";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
-
-const integrationIcons = [
-  MessageSquare,
-  Cloud,
-  PenTool,
-  Code2,
-  Zap,
-  FileText,
-  Video,
-  Blocks,
-];
+import { HighlightedHeading } from "@/components/ui/highlighted-heading";
 
 function Integrations() {
   const { integrations } = siteConfig;
 
   return (
-    <section id="integrations" className="overflow-hidden bg-brand-navy py-20 text-white sm:py-28">
-      <Container className="grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr]">
-        <Reveal>
-          <SectionHeading
-            eyebrow={integrations.eyebrow}
-            title={integrations.title}
-            description={integrations.description}
-            inverse
-          />
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 h-12 rounded-lg bg-brand-blue px-6 text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-blue/90"
-          >
-            <a href={integrations.cta.href}>
-              {integrations.cta.label}
-              <ArrowRight className="size-4" />
-            </a>
-          </Button>
+    <section id="integrations" className="relative overflow-hidden bg-[#043873] py-20 text-white sm:py-28">
+      {/* Subtle background wave patterns overlay */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none" />
+
+      <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        {/* Graphic Column (Left on desktop, bottom on mobile) */}
+        <Reveal delay={120} className="order-2 lg:order-1 relative mx-auto flex w-full max-w-[550px] items-center justify-center lg:max-w-none">
+          <div className="relative overflow-hidden rounded-[1.75rem] p-2 w-full flex justify-center">
+            <Image
+              src={integrations.image.src}
+              alt={integrations.image.alt}
+              width={integrations.image.width}
+              height={integrations.image.height}
+              className="h-auto w-full object-contain max-w-[500px] lg:max-w-none"
+              loading="lazy"
+            />
+          </div>
         </Reveal>
 
-        <Reveal delay={120} className="relative min-h-[420px]">
-          <div className="absolute left-1/2 top-1/2 size-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/14 bg-white/10 shadow-2xl shadow-slate-950/20 backdrop-blur" />
-          <div className="absolute left-1/2 top-1/2 flex size-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-[1.5rem] bg-brand-yellow text-brand-ink shadow-xl">
-            <Check className="size-9" />
-          </div>
-          <div className="absolute inset-0 rounded-full border border-dashed border-white/20" />
-          <div className="absolute inset-10 rounded-full border border-dashed border-brand-blue/35" />
-          <div className="relative grid min-h-[420px] grid-cols-2 gap-4 sm:grid-cols-4">
-            {integrations.apps.map((app, index) => {
-              const Icon = integrationIcons[index % integrationIcons.length];
-
-              return (
-                <div
-                  key={app.name}
-                  className="flex min-h-32 flex-col justify-between rounded-[1.25rem] border border-white/12 bg-white/10 p-4 shadow-lg shadow-slate-950/10 backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white/15"
-                >
-                  <Icon className="size-6 text-brand-yellow" />
-                  <div>
-                    <p className="font-semibold text-white">{app.name}</p>
-                    <p className="mt-1 text-sm text-white/62">{app.category}</p>
-                  </div>
-                </div>
-              );
-            })}
+        {/* Text Column (Right on desktop, top on mobile) */}
+        <Reveal className="order-1 lg:order-2 flex flex-col items-center text-center lg:items-start lg:text-left mx-auto lg:mx-0 max-w-2xl">
+          {integrations.eyebrow ? (
+            <p className="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white ring-1 ring-white/10">
+              {integrations.eyebrow}
+            </p>
+          ) : null}
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6.5xl leading-tight text-white">
+            <HighlightedHeading text={integrations.title} />
+          </h2>
+          <p className="mt-6 max-w-xl text-lg leading-8 text-white/80">
+            {integrations.description}
+          </p>
+          <div className="mt-8 flex justify-center lg:justify-start w-full">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 w-full sm:w-auto rounded-lg bg-brand-blue px-6 text-white hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/10 transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              <a href={integrations.cta.href}>
+                {integrations.cta.label}
+                <ArrowRight className="size-4" />
+              </a>
+            </Button>
           </div>
         </Reveal>
       </Container>
