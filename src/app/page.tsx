@@ -2,7 +2,7 @@ import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { Cta } from "@/components/sections/cta";
-import { Features } from "@/components/sections/features";
+import { Features, YourData } from "@/components/sections/features";
 import { Pricing } from "@/components/sections/pricing";
 import { Hero } from "@/components/sections/hero";
 import { Integrations } from "@/components/sections/integrations";
@@ -16,12 +16,13 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1 bg-background">
         <Hero />
-        <TrustedLogos />
         <Features />
         <Pricing />
+        <Cta />
+        <YourData />
+        <TrustedLogos />
         <Integrations />
         <Testimonials />
-        <Cta />
       </main>
       <Footer />
     </>
