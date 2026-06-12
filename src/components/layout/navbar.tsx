@@ -85,7 +85,7 @@ function MobileNav({ activeSection }: { activeSection: string }) {
         <Button
           variant="ghost"
           size="icon-lg"
-          className="text-brand-ink hover:bg-slate-100 hover:text-brand-ink lg:hidden"
+          className="text-brand-blue hover:bg-slate-100 hover:text-brand-blue lg:hidden"
           aria-label="Open navigation menu"
         >
           <Menu className="size-5" />

@@ -264,10 +264,10 @@ export const siteConfig = {
     },
   ] satisfies PricingPlan[],
   integrations: {
-    eyebrow: "Your apps, connected",
-    title: "Bring every workflow into one calm workspace",
+    eyebrow: "",
+    title: "Work with Your Favorite Apps Using whitepace",
     description:
-      "Whitepace connects planning, notes, messaging, files, and delivery tools so teams can keep context close without forcing a full rebuild of their stack.",
+      "Whitepace teams up with your favorite software. Integrate with over 1000+ apps with Zapier to have all the tools you need for your project success.",
     image: {
       src: "/favorite-apps.png",
       alt: "Whitepace connected apps orbit illustration",
@@ -275,8 +275,8 @@ export const siteConfig = {
       height: 400,
     },
     cta: {
-      label: "Explore integrations",
-      href: "#integrations",
+      label: "Read more",
+      href: "#pricing",
     },
     apps: [
       { name: "Slack", category: "Messaging" },
@@ -334,23 +334,23 @@ export const siteConfig = {
   testimonials: [
     {
       quote:
-        "Whitepace gave our distributed team a single operating rhythm. Planning meetings are shorter and project updates are finally easy to trust.",
-      author: "Maya Chen",
-      role: "Head of Operations, BrightLabs",
+        "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
+      author: "Jessie Owner",
+      role: "Founder, XYZ Company",
       avatar: "/testimonials/avatar-1.png",
     },
     {
       quote:
-        "The dashboard feels focused without being rigid. We can manage client launches, creative reviews, and weekly reporting from the same workspace.",
-      author: "Omar Haddad",
-      role: "Founder, Northstar Studio",
+        "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
+      author: "Jessie Owner",
+      role: "Founder, XYZ Company",
       avatar: "/testimonials/avatar-2.png",
     },
     {
       quote:
-        "Our engineering and marketing teams stopped duplicating status notes. Everyone sees the same source of truth before decisions are made.",
-      author: "Sofia Rivera",
-      role: "VP Product, Flowstate",
+        "If you haven't tried whitepace yet, you need to give it a shot for your next event. It's so easy and intuitive to get a new event setup and if you need any help their customer service is seriously amazing.",
+      author: "Jessie Owner",
+      role: "Founder, XYZ Company",
       avatar: "/testimonials/avatar-3.png",
     },
   ] satisfies Testimonial[],

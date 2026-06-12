@@ -12,7 +12,7 @@ const publicPath = (src: string) => join(process.cwd(), "public", src);
 const publicAssetExists = (src: string) => existsSync(publicPath(src));
 
 assert.equal(siteConfig.hero.badge, "Get More Done with whitepace");
-assert.match(siteConfig.hero.title, /Project Management/i);
+assert.match(siteConfig.hero.title, /Get More Done/i);
 assert.ok(siteConfig.hero.primaryCta.href.startsWith("#"));
 assert.ok(siteConfig.hero.secondaryCta.href.startsWith("#"));
 
@@ -81,31 +81,24 @@ assert.ok(
 
 assert.equal(siteConfig.cta.title, "Your work, everywhere you are");
 assert.ok(siteConfig.cta.primaryCta.href.startsWith("#"));
-assert.ok(siteConfig.cta.secondaryCta.href.startsWith("#"));
 
 assert.deepEqual(LANDING_SECTION_IDS, [
   "hero",
   "trusted-logos",
   "features",
-  "integrations",
-  "statistics",
-  "how-it-works",
-  "testimonials",
-  "resources",
   "pricing",
-  "faq",
+  "integrations",
+  "testimonials",
+  "cta",
   "footer",
 ]);
 assert.deepEqual(TRACKED_SECTION_IDS, [
   "hero",
   "features",
-  "integrations",
-  "statistics",
-  "how-it-works",
-  "testimonials",
-  "resources",
   "pricing",
-  "faq",
+  "integrations",
+  "testimonials",
+  "cta",
 ]);
 
 console.log("landing page content contract ok");

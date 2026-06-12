@@ -8,7 +8,7 @@ interface HighlightedHeadingProps {
 
 export function HighlightedHeading({ text, className }: HighlightedHeadingProps) {
   // Regex to match words that should have the yellow underline scribble under them
-  const regex = /(Management|together|needs|your data|Your Plan|you are)/i;
+  const regex = /(Management|together|needs|your data|Your Plan|you are|Say|sponsors)/i;
   const parts = text.split(regex);
 
   return (

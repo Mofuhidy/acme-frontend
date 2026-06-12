@@ -2,26 +2,30 @@ import Image from "next/image";
 import { siteConfig } from "@/content/landing-page";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
+import { HighlightedHeading } from "@/components/ui/highlighted-heading";
 
 function TrustedLogos() {
   return (
     <section
       id="trusted-logos"
       aria-labelledby="trusted-logos-title"
-      className="border-b bg-white py-12"
+      className="bg-white py-20 sm:py-28"
     >
-      <Container>
-        <Reveal className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <Container className="flex flex-col items-center gap-16">
+        <Reveal>
           <h2
             id="trusted-logos-title"
-            className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-slate-500 lg:text-left lg:max-w-xs"
+            className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl text-center leading-tight"
           >
-            Trusted by productive teams
+            <HighlightedHeading text="Our sponsors" />
           </h2>
-          <ul className="grid grid-cols-2 items-center gap-6 sm:grid-cols-4 lg:min-w-[640px]">
+        </Reveal>
+
+        <Reveal delay={90} className="w-full">
+          <ul className="grid grid-cols-2 items-center justify-items-center gap-12 sm:grid-cols-4 w-full max-w-5xl mx-auto">
             {siteConfig.trustedLogos.map((logo) => (
-              <li key={logo.name} className="flex justify-center">
-                <div className="relative h-10 w-28 filter grayscale opacity-45 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+              <li key={logo.name} className="flex justify-center w-full">
+                <div className="relative h-14 w-full max-w-[160px] transition-transform duration-300 hover:scale-105">
                   <Image
                     src={logo.src}
                     alt={logo.name}

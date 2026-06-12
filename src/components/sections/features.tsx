@@ -30,22 +30,22 @@ function Features() {
               className="grid gap-12 py-16 items-center md:grid-cols-2 sm:py-24"
             >
               <Reveal
-                className={isReverse ? "order-1 md:order-2" : "order-2 md:order-1"}
+                className={isReverse ? "order-1 md:order-2" : "order-1 md:order-1"}
               >
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
                   <p className="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-brand-blue-light px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue ring-1 ring-brand-blue/10">
                     {feature.eyebrow}
                   </p>
-                  <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl lg:text-5xl leading-tight">
+                  <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl lg:text-5xl leading-tight text-center md:text-left">
                     <HighlightedHeading text={feature.title} />
                   </h2>
-                  <p className="mt-6 text-base leading-8 text-slate-600">
+                  <p className="mt-6 text-base leading-8 text-slate-600 text-center md:text-left">
                     {feature.description}
                   </p>
-                  <div className="mt-8">
+                  <div className="mt-8 flex justify-center md:justify-start w-full">
                     <Button
                       asChild
-                      className="h-12 rounded-lg bg-brand-blue px-6 text-white hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/10 transition-transform duration-200 hover:-translate-y-0.5"
+                      className="h-12 w-full sm:w-auto rounded-lg bg-brand-blue px-6 text-white hover:bg-brand-blue/90 shadow-lg shadow-brand-blue/10 transition-transform duration-200 hover:-translate-y-0.5"
                     >
                       <a href={feature.href}>
                         {ctaLabel}
@@ -58,18 +58,18 @@ function Features() {
 
               <Reveal
                 delay={90}
-                className={isReverse ? "order-2 md:order-1" : "order-1 md:order-2"}
+                className={isReverse ? "order-2 md:order-1" : "order-2 md:order-2"}
               >
                 {isPlaceholder ? (
                   <div className="relative rounded-[1.75rem] border border-slate-200 bg-[#C4DEFD] aspect-[4/3] w-full shadow-lg shadow-slate-200/50" />
                 ) : (
-                  <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-2">
+                  <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-2 flex justify-center">
                     <Image
                       src={feature.image.src}
                       alt={feature.image.alt}
                       width={feature.image.width}
                       height={feature.image.height}
-                      className="h-auto w-full object-contain"
+                      className="h-auto w-full max-w-[550px] object-contain md:max-w-none"
                       loading="lazy"
                     />
                   </div>
