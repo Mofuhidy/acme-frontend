@@ -8,7 +8,7 @@ function render(text: string) {
 }
 
 function countBrushes(markup: string) {
-  return (markup.match(/<svg/g) ?? []).length;
+  return (markup.match(/data-highlight-brush="true"/g) ?? []).length;
 }
 
 function escapeForRegex(value: string) {
@@ -47,5 +47,13 @@ for (const { text, highlighted } of cases) {
 const plainMarkup = render("Hello world");
 
 assert.equal(countBrushes(plainMarkup), 0);
+
+const sizingMarkup = render("Choose Your Plan");
+
+assert.match(
+  sizingMarkup,
+  /left-\[-9%\].*bottom-\[-20%\].*h-\[0\.7em\].*w-\[114%\]/,
+  'expected "Your Plan" to use the tuned brush sizing classes',
+);
 
 console.log("highlighted heading contract ok");
