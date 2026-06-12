@@ -26,17 +26,17 @@ function Resources() {
             return (
               <Reveal key={resource.title} delay={index * 90}>
                 <article className="group h-full rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-blue/35 hover:shadow-xl hover:shadow-brand-blue/10">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-blue-light text-brand-blue">
+                  <div className="flex size-12 items-center justify-center rounded-xl bg-brand-blue-light text-brand-navy">
                     <Icon className="size-6" />
                   </div>
-                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-brand-blue">
+                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-brand-navy">
                     {resource.label}
                   </p>
                   <h3 className="mt-3 text-2xl font-bold text-brand-ink">{resource.title}</h3>
                   <p className="mt-4 leading-7 text-slate-600">{resource.description}</p>
                   <a
                     href={resource.href}
-                    className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-blue outline-none transition hover:gap-3 focus-visible:ring-3 focus-visible:ring-brand-blue/35"
+                    className="mt-6 inline-flex items-center gap-2 font-semibold text-brand-navy outline-none transition hover:gap-3 hover:text-brand-blue focus-visible:ring-3 focus-visible:ring-brand-blue/35"
                     aria-label={`Read more about ${resource.label.toLowerCase()}: ${resource.title}`}
                   >
                     Read more

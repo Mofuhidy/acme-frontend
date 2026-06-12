@@ -85,7 +85,7 @@ function MobileNav({ activeSection }: { activeSection: string }) {
         <Button
           variant="ghost"
           size="icon-lg"
-          className="text-brand-blue hover:bg-slate-100 hover:text-brand-blue lg:hidden"
+          className="text-brand-navy hover:bg-slate-100 hover:text-brand-blue lg:hidden"
           aria-label="Open navigation menu"
         >
           <Menu className="size-5" />
@@ -140,7 +140,7 @@ function Navbar() {
   const activeSection = useActiveSection();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/88">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/88">
       <Container className="flex h-20 items-center justify-between gap-6">
         <BrandMark />
         <DesktopNav activeSection={activeSection} />

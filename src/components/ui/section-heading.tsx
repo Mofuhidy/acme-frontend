@@ -31,7 +31,7 @@ function SectionHeading({
         <p
           className={cn(
             "mb-4 text-sm font-semibold uppercase tracking-[0.16em]",
-            inverse ? "text-brand-yellow" : "text-brand-blue"
+            inverse ? "text-brand-yellow" : "text-brand-navy"
           )}
         >
           {eyebrow}

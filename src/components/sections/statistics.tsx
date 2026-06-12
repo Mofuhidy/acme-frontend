@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/reveal";
 
 function Statistics() {
   return (
-    <section id="statistics" className="bg-brand-blue py-16 text-white sm:py-20">
+    <section id="statistics" className="bg-brand-navy py-16 text-white sm:py-20">
       <Container>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {siteConfig.statistics.map((stat, index) => (

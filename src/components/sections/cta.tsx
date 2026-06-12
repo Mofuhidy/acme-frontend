@@ -13,9 +13,9 @@ function Cta() {
   return (
     <section
       id="cta"
-      className="relative isolate overflow-visible bg-brand-navy py-20 text-white sm:py-28">
-      <div className="absolute -left-16 -top-64 bottom-12 -z-10 pointer-events-none select-none sm:-left-20 md:-left-24">
-        <CtaWaves className="h-[calc(100%+6rem)] w-auto" />
+      className="relative isolate overflow-hidden bg-brand-navy py-20 text-white sm:py-28">
+      <div className="absolute -left-36 top-1/2 -z-10 -translate-y-1/2 pointer-events-none select-none sm:-left-44 sm:w-auto md:-left-24 md:-top-64 md:bottom-12 md:translate-y-0">
+        <CtaWaves className="h-auto w-lg max-w-none sm:w-xl md:h-[calc(100%+6rem)] md:w-auto" />
       </div>
       <Container>
         <Reveal className="mx-auto max-w-4xl text-center">

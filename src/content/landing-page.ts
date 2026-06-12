@@ -174,10 +174,10 @@ export const siteConfig = {
         "Images, videos, PDFs and audio files are supported. Create math expressions and diagrams directly from the app. Take photos with the mobile app and save them to a note.",
       href: "#project-management",
       image: {
-        src: "/feature-project-management.svg",
-        alt: "Project board with task cards and progress indicators",
-        width: 840,
-        height: 620,
+        src: "/hero-dashboard.svg",
+        alt: "Whitepace dashboard showing project progress, tasks, and team activity",
+        width: 1080,
+        height: 760,
       },
     },
     {
