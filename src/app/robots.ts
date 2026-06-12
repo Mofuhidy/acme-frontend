@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://acme-frontend-mofuhidy.vercel.app/sitemap.xml",
+    sitemap: "https://white-frontend-3232xdvre-mofuhidys-projects.vercel.app/sitemap.xml",
   };
 }
