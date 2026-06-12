@@ -32,15 +32,20 @@ function Footer() {
           <div className="grid gap-8 sm:grid-cols-3">
             {siteConfig.footerGroups.map((group) => (
               <div key={group.title}>
-                <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-yellow">
-                  {group.title}
+                <h2 className="text-sm font-semibold uppercase tracking-[0.16em]">
+                  <a
+                    href={group.href}
+                    className="text-white transition-colors hover:text-brand-yellow focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white/30"
+                  >
+                    {group.title}
+                  </a>
                 </h2>
                 <ul className="mt-4 grid gap-3">
                   {group.links.map((link) => (
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-sm text-white/72 transition-colors hover:text-white focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white/30"
+                        className="text-sm text-white/72 transition-colors hover:text-brand-yellow focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white/30"
                       >
                         {link.label}
                       </a>

@@ -11,6 +11,7 @@ export type NavItem = {
 
 export type FooterGroup = {
   title: string;
+  href: string;
   links: {
     label: string;
     href: string;
@@ -467,6 +468,7 @@ export const siteConfig = {
   footerGroups: [
     {
       title: "Product",
+      href: "#features",
       links: [
         { label: "Overview", href: "#features" },
         { label: "Integrations", href: "#integrations" },
@@ -475,6 +477,7 @@ export const siteConfig = {
     },
     {
       title: "Resources",
+      href: "#resources",
       links: [
         { label: "Articles", href: "#resources" },
         { label: "Testimonials", href: "#testimonials" },
@@ -483,6 +486,7 @@ export const siteConfig = {
     },
     {
       title: "Company",
+      href: "#hero",
       links: [
         { label: "About", href: "#hero" },
         { label: "Contact", href: "mailto:hello@whitepace.example" },
