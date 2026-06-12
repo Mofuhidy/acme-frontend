@@ -4,9 +4,10 @@ import { YellowDash } from "@/components/ui/yellow-dash";
 interface HighlightedHeadingProps {
   text: string;
   className?: string;
+  highlightColor?: string;
 }
 
-export function HighlightedHeading({ text, className }: HighlightedHeadingProps) {
+export function HighlightedHeading({ text, className, highlightColor = "text-brand-yellow" }: HighlightedHeadingProps) {
   // Regex to match words that should have the yellow underline scribble under them
   const regex = /(Management|together|needs|your data|Your Plan|you are|Say|sponsors)/i;
   const parts = text.split(regex);
@@ -18,7 +19,7 @@ export function HighlightedHeading({ text, className }: HighlightedHeadingProps)
           return (
             <span key={index} className="relative inline-block whitespace-nowrap">
               {part}
-              <YellowDash className="absolute -bottom-2.5 left-0 w-full h-auto text-brand-yellow" />
+              <YellowDash className={`absolute -bottom-2.5 left-0 w-full h-auto ${highlightColor}`} />
             </span>
           );
         }

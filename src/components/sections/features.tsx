@@ -35,8 +35,8 @@ function FeatureRow({ feature }: FeatureRowProps) {
       className="relative isolate grid gap-12 py-16 items-center md:grid-cols-2 sm:py-24"
     >
       {feature.id === "project-management" && (
-        <div className="absolute -left-12 bottom-0 -z-10 pointer-events-none opacity-40 select-none sm:-left-20 md:left-[-120px] md:bottom-[-20px]">
-          <ConcentricWaves />
+        <div className="absolute -left-16 -bottom-8 -z-10 pointer-events-none opacity-40 select-none sm:-left-24 md:left-[-140px] md:-bottom-[40px]">
+          <ConcentricWaves className="w-[420px] h-auto sm:w-[500px] md:w-[560px]" />
         </div>
       )}
       <Reveal
