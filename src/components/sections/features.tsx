@@ -23,12 +23,15 @@ interface FeatureRowProps {
 function FeatureRow({ feature }: FeatureRowProps) {
   const isReverse = feature.id === "work-together";
   const ctaLabel = featureCtaLabels[feature.id] || "Learn more";
+  const hasDecorativeWaves = feature.id === "project-management";
 
   return (
     <div
       id={feature.id}
-      className="relative isolate grid gap-12 py-16 items-center md:grid-cols-2 sm:py-24">
-      {feature.id === "project-management" && (
+      className={`relative isolate grid items-center gap-12 py-16 md:grid-cols-2 sm:py-24 ${
+        hasDecorativeWaves ? "overflow-hidden" : ""
+      }`}>
+      {hasDecorativeWaves && (
         <div className="absolute -left-16 -bottom-8 -z-10 pointer-events-none opacity-40 select-none sm:-left-24 md:left-[-140px] md:bottom-[-40px]">
           <ConcentricWaves className="w-[420px] h-auto sm:w-[500px] md:w-[560px]" />
         </div>

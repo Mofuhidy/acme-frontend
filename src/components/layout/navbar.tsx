@@ -91,7 +91,10 @@ function MobileNav({ activeSection }: { activeSection: string }) {
           <Menu className="size-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[86vw] border-white/10 p-0">
+      <SheetContent
+        side="right"
+        className="w-screen max-w-full border-white/10 p-0 min-[360px]:w-[86vw] min-[360px]:max-w-sm"
+      >
         <SheetHeader className="border-b p-5 text-left">
           <SheetTitle>{siteConfig.name}</SheetTitle>
           <SheetDescription>{siteConfig.description}</SheetDescription>

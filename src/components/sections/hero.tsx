@@ -17,12 +17,12 @@ function Hero() {
       <div className="absolute -left-16 -bottom-8 -z-10 pointer-events-none opacity-40 select-none sm:-left-24 md:left-[-140px] md:bottom-[-40px]">
         <ConcentricWaves className="w-[420px] h-auto sm:w-[500px] md:w-[560px]" />
       </div>
-      <Container className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:py-24">
+      <Container className="grid min-h-[calc(100svh-5rem)] items-center gap-10 py-12 min-[350px]:gap-12 min-[350px]:py-16 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:py-24">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center lg:items-start lg:text-left lg:mx-0">
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-brand-blue sm:text-6xl lg:text-7.5xl">
+          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-brand-blue min-[350px]:text-5xl sm:text-6xl lg:text-7.5xl">
             {hero.title}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-brand-blue">
+          <p className="mt-6 max-w-xl text-base leading-7 text-brand-blue min-[350px]:text-lg min-[350px]:leading-8">
             {hero.description}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start w-full sm:w-auto">
