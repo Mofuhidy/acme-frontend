@@ -87,7 +87,7 @@ function FeatureRow({ feature }: FeatureRowProps) {
 
 function Features() {
   const primaryFeatures = siteConfig.features.filter(
-    (feature) => feature.id !== "your-data"
+    (feature) => feature.id !== "your-data" && feature.id !== "extension"
   );
 
   return (
