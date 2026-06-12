@@ -27,7 +27,7 @@ function Footer() {
               asChild
               className="mt-7 h-12 rounded-lg bg-brand-blue px-6 text-white hover:bg-brand-blue/90"
             >
-              <a href="#cta">
+              <a href="#pricing">
                 Try it today
                 <ArrowRight className="size-4" />
               </a>
