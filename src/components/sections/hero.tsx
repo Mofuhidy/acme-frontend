@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { siteConfig } from "@/content/landing-page";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { ConcentricWaves } from "@/components/ui/concentric-waves";
 
 function Hero() {
   const { hero } = siteConfig;
@@ -13,6 +14,9 @@ function Hero() {
       className="relative isolate overflow-hidden bg-white text-brand-ink"
     >
       <div className="absolute inset-0 -z-10 opacity-45 [background-image:radial-gradient(circle_at_18%_20%,rgba(255,228,146,0.2),transparent_32%),radial-gradient(circle_at_86%_18%,rgba(255,228,146,0.15),transparent_28%)]" />
+      <div className="absolute -left-12 bottom-0 -z-10 pointer-events-none opacity-40 select-none sm:-left-20 md:left-[-120px] md:bottom-[-20px]">
+        <ConcentricWaves />
+      </div>
       <Container className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:py-24">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center lg:items-start lg:text-left lg:mx-0">
           <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-brand-blue sm:text-6xl lg:text-7.5xl">

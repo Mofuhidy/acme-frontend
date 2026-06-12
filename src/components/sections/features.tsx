@@ -7,6 +7,8 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { HighlightedHeading } from "@/components/ui/highlighted-heading";
 
+import { ConcentricWaves } from "@/components/ui/concentric-waves";
+
 const featureCtaLabels: Record<string, string> = {
   "project-management": "Get Started",
   "work-together": "Try it now",
@@ -30,15 +32,17 @@ function FeatureRow({ feature }: FeatureRowProps) {
   return (
     <div
       id={feature.id}
-      className="grid gap-12 py-16 items-center md:grid-cols-2 sm:py-24"
+      className="relative isolate grid gap-12 py-16 items-center md:grid-cols-2 sm:py-24"
     >
+      {feature.id === "project-management" && (
+        <div className="absolute -left-12 bottom-0 -z-10 pointer-events-none opacity-40 select-none sm:-left-20 md:left-[-120px] md:bottom-[-20px]">
+          <ConcentricWaves />
+        </div>
+      )}
       <Reveal
         className={isReverse ? "order-1 md:order-2" : "order-1 md:order-1"}
       >
         <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
-          <p className="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-brand-blue-light px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-blue ring-1 ring-brand-blue/10">
-            {feature.eyebrow}
-          </p>
           <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl lg:text-5xl leading-tight text-center md:text-left">
             <HighlightedHeading text={feature.title} />
           </h2>
