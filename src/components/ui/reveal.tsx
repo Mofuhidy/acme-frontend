@@ -6,9 +6,16 @@ import { cn } from "@/lib/utils";
 
 type RevealProps = React.ComponentPropsWithoutRef<"div"> & {
   delay?: number;
+  offset?: "sm" | "md" | "lg";
 };
 
-function Reveal({ className, delay = 0, style, ...props }: RevealProps) {
+function Reveal({
+  className,
+  delay = 0,
+  offset = "md",
+  style,
+  ...props
+}: RevealProps) {
   const ref = React.useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = React.useState(false);
 
@@ -38,10 +45,15 @@ function Reveal({ className, delay = 0, style, ...props }: RevealProps) {
     <div
       ref={ref}
       className={cn(
-        "motion-safe:transition-[opacity,transform] motion-safe:duration-700 motion-safe:ease-out",
+        "will-change-auto motion-safe:transition-[opacity,transform] motion-safe:duration-700 motion-safe:ease-out",
         isVisible
           ? "translate-y-0 opacity-100"
-          : "translate-y-6 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",
+          : cn(
+              "opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",
+              offset === "sm" && "translate-y-3",
+              offset === "md" && "translate-y-6",
+              offset === "lg" && "translate-y-10"
+            ),
         className
       )}
       style={{ transitionDelay: `${delay}ms`, ...style }}
