@@ -82,15 +82,15 @@ function Pricing() {
                 <div
                   className={`flex flex-col h-full rounded-[2rem] border px-8 py-10 transition duration-300 hover:-translate-y-1 ${
                     isPersonal
-                      ? "border-brand-blue bg-[#043873] text-white shadow-2xl shadow-brand-navy/35 lg:scale-105"
-                      : "border-slate-200 bg-white text-brand-ink shadow-sm hover:shadow-xl hover:shadow-slate-200/50"
+                      ? "border-slate-100 bg-white text-[#043873] shadow-[0_20px_50px_rgba(0,0,0,0.08)] lg:scale-105"
+                      : "border-2 border-brand-yellow bg-white text-brand-ink shadow-sm hover:shadow-xl hover:shadow-slate-200/50"
                   }`}
                 >
-                  <h3 className="text-xl font-bold">{plan.name}</h3>
+                  <h3 className={`text-xl font-bold ${isPersonal ? "text-[#043873]" : "text-brand-ink"}`}>{plan.name}</h3>
                   <div className="mt-5 flex items-baseline gap-2">
                     <span
                       className={`text-4xl font-bold tracking-tight sm:text-5xl ${
-                        isPersonal ? "text-brand-yellow" : "text-brand-ink"
+                        isPersonal ? "text-[#043873]" : "text-brand-ink"
                       }`}
                     >
                       {plan.price}
@@ -98,7 +98,7 @@ function Pricing() {
                   </div>
                   <p
                     className={`mt-4 text-sm font-semibold leading-6 ${
-                      isPersonal ? "text-white/80" : "text-slate-500"
+                      isPersonal ? "text-[#043873]/80" : "text-slate-500"
                     }`}
                   >
                     {plan.description}
@@ -120,14 +120,14 @@ function Pricing() {
 
                   <ul
                     className={`mt-8 space-y-4 text-sm leading-6 ${
-                      isPersonal ? "text-white/84" : "text-slate-600"
+                      isPersonal ? "text-[#043873]/90" : "text-slate-600"
                     }`}
                   >
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex gap-x-3">
                         <Check
                           className={`size-5 shrink-0 ${
-                            isPersonal ? "text-brand-yellow" : "text-brand-blue"
+                            isPersonal ? "text-brand-blue" : "text-brand-ink"
                           }`}
                           aria-hidden="true"
                         />
