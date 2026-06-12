@@ -171,3 +171,13 @@
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+/* Smooth theme transitions */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition-property: background-color, border-color, text-decoration-color, fill, stroke, color;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

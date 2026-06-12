@@ -12,7 +12,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate overflow-hidden bg-white text-brand-ink">
+      className="relative isolate overflow-hidden bg-white text-brand-ink dark:bg-slate-950 dark:text-white">
       <div className="absolute inset-0 -z-10 opacity-45 bg-[radial-gradient(circle_at_18%_20%,rgba(255,228,146,0.2),transparent_32%),radial-gradient(circle_at_86%_18%,rgba(255,228,146,0.15),transparent_28%)]" />
       <div className="absolute -left-16 -bottom-8 -z-10 pointer-events-none opacity-40 select-none sm:-left-24 md:left-[-140px] md:bottom-[-40px]">
         <ConcentricWaves className="w-[420px] h-auto sm:w-[500px] md:w-[560px]" />
@@ -40,7 +40,7 @@ function Hero() {
 
         <div className="relative w-full max-w-[550px] mx-auto lg:max-w-none">
           <div className="absolute -inset-5 rounded-[2rem] bg-brand-blue/5 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/50">
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/50 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}

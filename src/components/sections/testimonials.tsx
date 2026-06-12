@@ -8,10 +8,10 @@ import { HighlightedHeading } from "@/components/ui/highlighted-heading";
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="bg-white py-20 sm:py-28">
+    <section id="testimonials" className="bg-white py-20 sm:py-28 dark:bg-slate-950">
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl leading-tight">
+          <h2 className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl leading-tight dark:text-white">
             <HighlightedHeading text="See what our trusted users Say" />
           </h2>
         </Reveal>
@@ -26,15 +26,15 @@ function Testimonials() {
                 <figure
                   className={`flex h-full flex-col rounded-[2rem] p-8 shadow-xl transition duration-300 hover:-translate-y-1 ${
                     isBlue
-                      ? "bg-[#4F9CF9] text-white border border-[#4F9CF9] shadow-brand-blue/15"
-                      : "bg-white text-brand-ink border border-slate-100 shadow-slate-100/50"
+                      ? "bg-[#4F9CF9] text-white border border-[#4F9CF9] shadow-brand-blue/15 dark:border-transparent dark:shadow-none"
+                      : "bg-white text-brand-ink border border-slate-100 shadow-slate-100/50 dark:bg-slate-900 dark:text-white dark:border-slate-800 dark:shadow-none"
                   }`}
                 >
-                  <blockquote className={`flex-1 text-base leading-7 lg:text-lg lg:leading-8 ${isBlue ? "text-white" : "text-brand-ink"}`}>
+                  <blockquote className={`flex-1 text-base leading-7 lg:text-lg lg:leading-8 ${isBlue ? "text-white" : "text-brand-ink dark:text-white"}`}>
                     {`"${testimonial.quote}"`}
                   </blockquote>
 
-                  <figcaption className={`mt-8 border-t pt-6 flex items-center gap-4 ${isBlue ? "border-white/10" : "border-slate-100"}`}>
+                  <figcaption className={`mt-8 border-t pt-6 flex items-center gap-4 ${isBlue ? "border-white/10" : "border-slate-100 dark:border-slate-800"}`}>
                     <div className="relative size-12 overflow-hidden rounded-full ring-2 ring-slate-100/20 shrink-0">
                       <Image
                         src={testimonial.avatar}
@@ -47,7 +47,7 @@ function Testimonials() {
                     </div>
                     <div className="flex-1 flex flex-col justify-center gap-0.5">
                       <p className="font-bold leading-tight">{testimonial.author}</p>
-                      <p className={`text-sm ${isBlue ? "text-white/80" : "text-slate-500"}`}>{testimonial.role}</p>
+                      <p className={`text-sm ${isBlue ? "text-white/80" : "text-slate-500 dark:text-slate-400"}`}>{testimonial.role}</p>
                       <div className="flex gap-0.5 mt-1 shrink-0">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="size-4 fill-[#FFE492] text-[#FFE492]" />
@@ -65,14 +65,14 @@ function Testimonials() {
         <Reveal delay={180} className="mt-12 flex justify-center gap-5">
           <button
             type="button"
-            className="flex size-14 items-center justify-center rounded-full bg-[#E9F2FF] text-[#043873] hover:bg-brand-blue/20 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md cursor-pointer"
+            className="flex size-14 items-center justify-center rounded-full bg-[#E9F2FF] text-[#043873] hover:bg-brand-blue/20 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md cursor-pointer dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
             aria-label="Previous Testimonial"
           >
             <ChevronLeft className="size-6" />
           </button>
           <button
             type="button"
-            className="flex size-14 items-center justify-center rounded-full bg-[#E9F2FF] text-[#043873] hover:bg-brand-blue/20 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md cursor-pointer"
+            className="flex size-14 items-center justify-center rounded-full bg-[#E9F2FF] text-[#043873] hover:bg-brand-blue/20 hover:scale-105 active:scale-95 transition-all duration-200 shadow-md cursor-pointer dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
             aria-label="Next Testimonial"
           >
             <ChevronRight className="size-6" />

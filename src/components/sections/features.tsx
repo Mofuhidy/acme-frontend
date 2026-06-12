@@ -39,10 +39,10 @@ function FeatureRow({ feature }: FeatureRowProps) {
       <Reveal
         className={isReverse ? "order-1 md:order-2" : "order-1 md:order-1"}>
         <div className="flex flex-col justify-center items-center text-center md:items-start md:text-left">
-          <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl lg:text-5xl leading-tight text-center md:text-left">
+          <h2 className="text-3xl font-bold tracking-tight text-brand-ink sm:text-4xl lg:text-5xl leading-tight text-center md:text-left dark:text-white">
             <HighlightedHeading text={feature.title} />
           </h2>
-          <p className="mt-6 text-base leading-8 text-slate-600 text-center md:text-left">
+          <p className="mt-6 text-base leading-8 text-slate-600 text-center md:text-left dark:text-slate-400">
             {feature.description}
           </p>
           <div className="mt-8 flex justify-center md:justify-start w-full">
@@ -61,7 +61,7 @@ function FeatureRow({ feature }: FeatureRowProps) {
       <Reveal
         delay={90}
         className={isReverse ? "order-2 md:order-1" : "order-2 md:order-2"}>
-        <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-2 flex justify-center transition duration-300 hover:scale-[1.02] hover:-translate-y-1">
+        <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-2 flex justify-center transition duration-300 hover:scale-[1.02] hover:-translate-y-1 dark:bg-slate-900">
           <Image
             src={feature.image.src}
             alt={feature.image.alt}
@@ -83,8 +83,8 @@ function Features() {
   );
 
   return (
-    <section id="features" className="bg-white py-12 sm:py-16">
-      <Container className="divide-y divide-slate-100">
+    <section id="features" className="bg-white py-12 sm:py-16 dark:bg-slate-950">
+      <Container className="divide-y divide-slate-100 dark:divide-slate-900">
         {primaryFeatures.map(feature => (
           <FeatureRow key={feature.id} feature={feature} />
         ))}
@@ -101,7 +101,7 @@ function YourData() {
   if (!securityFeature) return null;
 
   return (
-    <section id="your-data" className="bg-white py-12 sm:py-16">
+    <section id="your-data" className="bg-white py-12 sm:py-16 dark:bg-slate-950">
       <Container>
         <FeatureRow feature={securityFeature} />
       </Container>
