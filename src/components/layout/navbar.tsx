@@ -24,10 +24,10 @@ function BrandMark() {
   return (
     <Link
       href="#hero"
-      className="group inline-flex items-center rounded-lg text-white outline-none transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-white/40"
+      className="group inline-flex items-center rounded-lg outline-none transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-brand-blue/30"
       aria-label="whitepace home"
     >
-      <Logo variant="light" className="h-6.5 w-auto sm:h-7.5" />
+      <Logo variant="blue" className="h-6.5 w-auto sm:h-7.5" />
     </Link>
   );
 }
@@ -43,23 +43,23 @@ function DesktopNav({ activeSection }: { activeSection: string }) {
               item.href === `#${activeSection}` ? "page" : undefined
             }
             className={cn(
-              "inline-flex h-11 items-center gap-1 rounded-lg px-3 text-sm font-medium text-white/84 transition-colors",
-              "hover:bg-white/10 hover:text-white focus-visible:bg-white/10 focus-visible:text-white focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-white/30",
+              "inline-flex h-11 items-center gap-1 rounded-lg px-3 text-sm font-medium text-brand-ink/80 transition-colors",
+              "hover:bg-slate-100 hover:text-brand-ink focus-visible:bg-slate-100 focus-visible:text-brand-ink focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/20",
               item.href === `#${activeSection}` &&
-                "bg-white/12 text-white shadow-inner shadow-white/5"
+                "bg-slate-100 text-brand-ink font-semibold"
             )}
           >
             {item.label}
-            {item.children ? <ChevronDown className="size-4" /> : null}
+            {item.children ? <ChevronDown className="size-4 opacity-70" /> : null}
           </a>
           {item.children ? (
             <div className="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition-[opacity,transform,visibility] duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              <div className="rounded-2xl border border-white/10 bg-white p-3 text-brand-ink shadow-2xl shadow-slate-950/20">
+              <div className="rounded-2xl border border-slate-200 bg-white p-3 text-brand-ink shadow-2xl shadow-slate-950/10">
                 {item.children.map((child) => (
                   <a
                     key={child.label}
                     href={child.href}
-                    className="block rounded-xl p-3 transition-colors hover:bg-brand-blue-light focus-visible:bg-brand-blue-light focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25"
+                    className="block rounded-xl p-3 transition-colors hover:bg-slate-50 focus-visible:bg-slate-50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25"
                   >
                     <span className="block text-sm font-semibold">
                       {child.label}
@@ -85,7 +85,7 @@ function MobileNav({ activeSection }: { activeSection: string }) {
         <Button
           variant="ghost"
           size="icon-lg"
-          className="text-white hover:bg-white/10 hover:text-white lg:hidden"
+          className="text-brand-ink hover:bg-slate-100 hover:text-brand-ink lg:hidden"
           aria-label="Open navigation menu"
         >
           <Menu className="size-5" />
@@ -140,7 +140,7 @@ function Navbar() {
   const activeSection = useActiveSection();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-brand-navy/95 backdrop-blur supports-[backdrop-filter]:bg-brand-navy/88">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/88">
       <Container className="flex h-20 items-center justify-between gap-6">
         <BrandMark />
         <DesktopNav activeSection={activeSection} />

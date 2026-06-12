@@ -3,6 +3,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { Cta } from "@/components/sections/cta";
 import { Features } from "@/components/sections/features";
+import { Pricing } from "@/components/sections/pricing";
 import { Faq } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { HowItWorks } from "@/components/sections/how-it-works";
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <TrustedLogos />
         <Features />
+        <Pricing />
         <Integrations />
         <Statistics />
         <HowItWorks />
