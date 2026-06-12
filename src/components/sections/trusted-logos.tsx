@@ -9,13 +9,13 @@ function TrustedLogos() {
     <section
       id="trusted-logos"
       aria-labelledby="trusted-logos-title"
-      className="bg-white py-20 sm:py-28"
+      className="bg-white py-20 sm:py-28 dark:bg-slate-950"
     >
       <Container className="flex flex-col items-center gap-16">
         <Reveal>
           <h2
             id="trusted-logos-title"
-            className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl text-center leading-tight"
+            className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl text-center leading-tight dark:text-white"
           >
             <HighlightedHeading text="Our sponsors" />
           </h2>
@@ -31,7 +31,7 @@ function TrustedLogos() {
                     alt={logo.name}
                     fill
                     sizes="(max-width: 640px) 50vw, 160px"
-                    className="object-contain"
+                    className="object-contain dark:brightness-0 dark:invert"
                     loading="lazy"
                   />
                 </div>

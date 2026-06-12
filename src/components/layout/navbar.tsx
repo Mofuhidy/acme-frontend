@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { Logo } from "@/components/ui/logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 function BrandMark() {
   return (
@@ -43,10 +44,10 @@ function DesktopNav({ activeSection }: { activeSection: string }) {
               item.href === `#${activeSection}` ? "page" : undefined
             }
             className={cn(
-              "inline-flex h-11 items-center gap-1 rounded-lg px-3 text-sm font-medium text-brand-ink/80 transition-colors",
-              "hover:bg-slate-100 hover:text-brand-ink focus-visible:bg-slate-100 focus-visible:text-brand-ink focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/20",
+              "inline-flex h-11 items-center gap-1 rounded-lg px-3 text-sm font-medium text-brand-ink/80 transition-colors dark:text-slate-300",
+              "hover:bg-slate-100 hover:text-brand-ink dark:hover:bg-slate-900 dark:hover:text-white focus-visible:bg-slate-100 focus-visible:text-brand-ink focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/20",
               item.href === `#${activeSection}` &&
-                "bg-slate-100 text-brand-ink font-semibold"
+                "bg-slate-100 text-brand-ink font-semibold dark:bg-slate-900 dark:text-white"
             )}
           >
             {item.label}
@@ -54,17 +55,17 @@ function DesktopNav({ activeSection }: { activeSection: string }) {
           </a>
           {item.children ? (
             <div className="invisible absolute left-0 top-full z-50 w-80 translate-y-2 pt-3 opacity-0 transition-[opacity,transform,visibility] duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-              <div className="rounded-2xl border border-slate-200 bg-white p-3 text-brand-ink shadow-2xl shadow-slate-950/10">
+              <div className="rounded-2xl border border-slate-200 bg-white p-3 text-brand-ink shadow-2xl shadow-slate-950/10 dark:border-slate-800 dark:bg-slate-950 dark:text-white">
                 {item.children.map((child) => (
                   <a
                     key={child.label}
                     href={child.href}
-                    className="block rounded-xl p-3 transition-colors hover:bg-slate-50 focus-visible:bg-slate-50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25"
+                    className="block rounded-xl p-3 transition-colors hover:bg-slate-50 focus-visible:bg-slate-50 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25 dark:hover:bg-slate-900"
                   >
                     <span className="block text-sm font-semibold">
                       {child.label}
                     </span>
-                    <span className="mt-1 block text-sm leading-6 text-slate-600">
+                    <span className="mt-1 block text-sm leading-6 text-slate-600 dark:text-slate-400">
                       {child.description}
                     </span>
                   </a>
@@ -93,15 +94,19 @@ function MobileNav({ activeSection }: { activeSection: string }) {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="w-screen max-w-full border-white/10 p-0 min-[360px]:w-[86vw] min-[360px]:max-w-sm"
+        className="w-screen max-w-full border-white/10 p-0 min-[360px]:w-[86vw] min-[360px]:max-w-sm dark:bg-slate-950 dark:border-slate-800"
       >
-        <SheetHeader className="border-b p-5 text-left">
-          <SheetTitle>{siteConfig.name}</SheetTitle>
-          <SheetDescription>{siteConfig.description}</SheetDescription>
+        <SheetHeader className="border-b p-5 text-left dark:border-slate-800">
+          <SheetTitle className="dark:text-white">{siteConfig.name}</SheetTitle>
+          <SheetDescription className="dark:text-slate-400">{siteConfig.description}</SheetDescription>
         </SheetHeader>
         <nav aria-label="Mobile primary" className="grid gap-2 p-5">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800 mb-2">
+            <span className="text-sm font-semibold text-muted-foreground dark:text-slate-400">Appearance</span>
+            <ThemeToggle />
+          </div>
           {siteConfig.navItems.map((item) => (
-            <div key={item.label} className="rounded-2xl bg-muted/60 p-2">
+            <div key={item.label} className="rounded-2xl bg-muted/60 dark:bg-slate-900/60 p-2">
               <SheetClose asChild>
                 <a
                   href={item.href}
@@ -109,8 +114,8 @@ function MobileNav({ activeSection }: { activeSection: string }) {
                     item.href === `#${activeSection}` ? "page" : undefined
                   }
                   className={cn(
-                    "flex min-h-11 items-center justify-between rounded-xl px-3 text-base font-semibold text-brand-ink transition-colors hover:bg-background focus-visible:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25",
-                    item.href === `#${activeSection}` && "bg-background"
+                    "flex min-h-11 items-center justify-between rounded-xl px-3 text-base font-semibold text-brand-ink transition-colors hover:bg-background focus-visible:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue/25 dark:text-white dark:hover:bg-slate-800",
+                    item.href === `#${activeSection}` && "bg-background dark:bg-slate-800"
                   )}
                 >
                   {item.label}
@@ -123,7 +128,7 @@ function MobileNav({ activeSection }: { activeSection: string }) {
                     <SheetClose asChild key={child.label}>
                       <a
                         href={child.href}
-                        className="rounded-xl px-3 py-2 text-sm leading-6 text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:bg-background focus-visible:text-foreground focus-visible:outline-none"
+                        className="rounded-xl px-3 py-2 text-sm leading-6 text-muted-foreground transition-colors hover:bg-background hover:text-foreground focus-visible:bg-background focus-visible:text-foreground focus-visible:outline-none dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
                       >
                         {child.label}
                       </a>
@@ -143,11 +148,12 @@ function Navbar() {
   const activeSection = useActiveSection();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/88">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/88 dark:border-slate-800 dark:bg-slate-950/95 dark:supports-backdrop-filter:bg-slate-950/88">
       <Container className="flex h-20 items-center justify-between gap-6">
         <BrandMark />
         <DesktopNav activeSection={activeSection} />
         <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <Button
             asChild
             variant="secondary"

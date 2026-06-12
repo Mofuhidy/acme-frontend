@@ -52,13 +52,13 @@ function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="bg-white py-20 sm:py-28 overflow-hidden">
+    <section id="pricing" className="bg-white py-20 sm:py-28 overflow-hidden dark:bg-slate-950">
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl leading-tight">
+          <h2 className="text-4xl font-bold tracking-tight text-brand-ink sm:text-5xl lg:text-6xl leading-tight dark:text-white">
             <HighlightedHeading text="Choose Your Plan" />
           </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
+          <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-400">
             Whether you want to get organized, keep your personal life on track,
             or boost workplace productivity, Evernote has the right plan for
             you.
@@ -82,37 +82,37 @@ function Pricing() {
                 <div
                   className={`flex flex-col h-full rounded-[2rem] border px-8 py-10 transition duration-300 hover:-translate-y-1 ${
                     isPersonal
-                      ? "border-slate-100 bg-white text-[#043873] shadow-[0_20px_50px_rgba(0,0,0,0.08)] lg:scale-105"
-                      : "border-2 border-brand-yellow bg-white text-brand-ink shadow-sm hover:shadow-xl hover:shadow-slate-200/50"
+                      ? "border-slate-100 bg-white text-[#043873] shadow-[0_20px_50px_rgba(0,0,0,0.08)] lg:scale-105 dark:border-transparent dark:bg-brand-navy dark:text-white dark:shadow-none"
+                      : "border-2 border-brand-yellow bg-white text-brand-ink shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:bg-slate-900 dark:text-white dark:border-brand-yellow dark:shadow-none"
                   }`}>
                   <h3
-                    className={`text-xl font-bold ${isPersonal ? "text-[#043873]" : "text-brand-ink"}`}>
+                    className={`text-xl font-bold ${isPersonal ? "text-[#043873] dark:text-white" : "text-brand-ink dark:text-white"}`}>
                     {plan.name}
                   </h3>
                   <div className="mt-5 flex items-baseline gap-2">
                     <span
                       className={`text-4xl font-bold tracking-tight sm:text-5xl ${
-                        isPersonal ? "text-[#043873]" : "text-brand-ink"
+                        isPersonal ? "text-[#043873] dark:text-white" : "text-brand-ink dark:text-white"
                       }`}>
                       {plan.price}
                     </span>
                   </div>
                   <p
                     className={`mt-4 text-sm font-semibold leading-6 ${
-                      isPersonal ? "text-[#043873]/80" : "text-slate-500"
+                      isPersonal ? "text-[#043873]/80 dark:text-slate-300" : "text-slate-500 dark:text-slate-400"
                     }`}>
                     {plan.description}
                   </p>
 
                   <ul
                     className={`mt-8 space-y-4 text-sm leading-6 ${
-                      isPersonal ? "text-[#043873]/90" : "text-slate-600"
+                      isPersonal ? "text-[#043873]/90 dark:text-slate-200" : "text-slate-600 dark:text-slate-300"
                     }`}>
                     {plan.features.map(feature => (
                       <li key={feature} className="flex gap-x-3">
                         <Check
                           className={`size-5 shrink-0 ${
-                            isPersonal ? "text-brand-blue" : "text-brand-ink"
+                            isPersonal ? "text-brand-blue dark:text-brand-yellow" : "text-brand-ink dark:text-brand-yellow"
                           }`}
                           aria-hidden="true"
                         />
@@ -126,8 +126,8 @@ function Pricing() {
                       variant={isPersonal ? "default" : "outline"}
                       className={`h-12  rounded-xl px-6 font-semibold shadow-sm transition duration-200 ${
                         isPersonal
-                          ? "bg-brand-blue text-white hover:bg-brand-blue/90"
-                          : "border-brand-yellow text-brand-ink hover:bg-slate-50"
+                          ? "bg-brand-blue text-white hover:bg-brand-blue/90 dark:bg-brand-yellow dark:text-brand-ink dark:hover:bg-brand-yellow/90"
+                          : "border-brand-yellow text-brand-ink hover:bg-slate-50 dark:text-white dark:hover:bg-slate-800"
                       }`}>
                       <a href="#hero">{plan.buttonLabel}</a>
                     </Button>
@@ -146,8 +146,8 @@ function Pricing() {
               onClick={() => scrollToCard(index)}
               className={`size-3 rounded-full transition-all duration-300 ${
                 activeIndex === index
-                  ? "bg-[#043873] scale-125"
-                  : "bg-slate-300 hover:bg-slate-400"
+                  ? "bg-[#043873] dark:bg-brand-yellow scale-125"
+                  : "bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600"
               }`}
               aria-label={`Go to plan ${index + 1}`}
             />

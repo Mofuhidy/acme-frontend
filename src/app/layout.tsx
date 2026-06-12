@@ -23,6 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/ui/theme-provider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,8 +33,28 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full antialiased"
+      className="h-full antialiased theme-transition"
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem('theme');
+                  const supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (stored === 'dark' || (!stored && supportDark)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col">
         <a
           href="#main-content"
@@ -40,7 +62,9 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
