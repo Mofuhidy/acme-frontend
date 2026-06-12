@@ -8,6 +8,10 @@ import { Hero } from "@/components/sections/hero";
 import { Integrations } from "@/components/sections/integrations";
 import { Testimonials } from "@/components/sections/testimonials";
 import { TrustedLogos } from "@/components/sections/trusted-logos";
+import { Statistics } from "@/components/sections/statistics";
+import { HowItWorks } from "@/components/sections/how-it-works";
+import { Resources } from "@/components/sections/resources";
+import { Faq } from "@/components/sections/faq";
 
 export default function Home() {
   return (
@@ -16,13 +20,17 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1 bg-background">
         <Hero />
-        <Features />
-        <Pricing />
-        <Cta />
-        <YourData />
         <TrustedLogos />
+        <Features />
+        <YourData />
+        <HowItWorks />
+        <Statistics />
         <Integrations />
+        <Pricing />
         <Testimonials />
+        <Resources />
+        <Faq />
+        <Cta />
       </main>
       <Footer />
     </>

@@ -14,10 +14,12 @@ function Integrations() {
     <section id="integrations" className="relative isolate overflow-hidden bg-[#043873] py-20 text-white sm:py-28">
       {/* Decorative wave lines on the right */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 -z-10 pointer-events-none select-none w-full opacity-50">
-        <img
+        <Image
           src="/Element.svg"
           alt=""
           aria-hidden="true"
+          width={1920}
+          height={701}
           className="w-full h-auto"
         />
       </div>
