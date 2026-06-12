@@ -61,9 +61,9 @@ function Features() {
                 className={isReverse ? "order-2 md:order-1" : "order-2 md:order-2"}
               >
                 {isPlaceholder ? (
-                  <div className="relative rounded-[1.75rem] border border-slate-200 bg-[#C4DEFD] aspect-[4/3] w-full shadow-lg shadow-slate-200/50" />
+                  <div className="relative rounded-[1.75rem] border border-slate-200 bg-[#C4DEFD] aspect-[4/3] w-full shadow-lg shadow-slate-200/50 transition duration-300 hover:scale-[1.02] hover:-translate-y-1" />
                 ) : (
-                  <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-2 flex justify-center">
+                  <div className="relative overflow-hidden rounded-[1.75rem] bg-white p-2 flex justify-center transition duration-300 hover:scale-[1.02] hover:-translate-y-1">
                     <Image
                       src={feature.image.src}
                       alt={feature.image.alt}

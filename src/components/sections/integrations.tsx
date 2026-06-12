@@ -24,7 +24,7 @@ function Integrations() {
               alt={integrations.image.alt}
               width={integrations.image.width}
               height={integrations.image.height}
-              className="h-auto w-full object-contain max-w-[500px] lg:max-w-none"
+              className="h-auto w-full object-contain max-w-[500px] lg:max-w-none animate-float"
               loading="lazy"
             />
           </div>
