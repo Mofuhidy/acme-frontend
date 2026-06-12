@@ -1,0 +1,25 @@
+<svg width="840" height="620" viewBox="0 0 840 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Project management board</title>
+  <desc id="desc">Task cards arranged in a project board with progress markers.</desc>
+  <rect width="840" height="620" rx="40" fill="#E9F2FF"/>
+  <rect x="86" y="78" width="668" height="464" rx="34" fill="white"/>
+  <rect x="124" y="120" width="214" height="22" rx="11" fill="#043873"/>
+  <rect x="124" y="172" width="592" height="12" rx="6" fill="#D7E7FF"/>
+  <rect x="124" y="228" width="168" height="236" rx="22" fill="#F7FAFF"/>
+  <rect x="336" y="228" width="168" height="236" rx="22" fill="#F7FAFF"/>
+  <rect x="548" y="228" width="168" height="236" rx="22" fill="#F7FAFF"/>
+  <rect x="148" y="258" width="86" height="16" rx="8" fill="#4F9CF9"/>
+  <rect x="148" y="308" width="118" height="76" rx="16" fill="white"/>
+  <rect x="172" y="330" width="70" height="12" rx="6" fill="#043873"/>
+  <rect x="172" y="356" width="46" height="10" rx="5" fill="#C8D9F3"/>
+  <rect x="360" y="258" width="86" height="16" rx="8" fill="#FFE492"/>
+  <rect x="360" y="308" width="118" height="76" rx="16" fill="white"/>
+  <rect x="384" y="330" width="70" height="12" rx="6" fill="#043873"/>
+  <rect x="384" y="356" width="46" height="10" rx="5" fill="#C8D9F3"/>
+  <rect x="572" y="258" width="86" height="16" rx="8" fill="#043873"/>
+  <rect x="572" y="308" width="118" height="76" rx="16" fill="white"/>
+  <rect x="596" y="330" width="70" height="12" rx="6" fill="#043873"/>
+  <rect x="596" y="356" width="46" height="10" rx="5" fill="#C8D9F3"/>
+  <circle cx="662" cy="454" r="36" fill="#4F9CF9"/>
+  <path d="M650 455l9 9 20-25" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

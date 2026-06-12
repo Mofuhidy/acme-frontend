@@ -1,0 +1,20 @@
+<svg width="840" height="620" viewBox="0 0 840 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Workflow integrations</title>
+  <desc id="desc">Integration cards connected around the Whitepace workspace.</desc>
+  <rect width="840" height="620" rx="40" fill="#E9F2FF"/>
+  <rect x="286" y="188" width="268" height="244" rx="34" fill="white" stroke="#D7E7FF" stroke-width="6"/>
+  <rect x="338" y="244" width="164" height="22" rx="11" fill="#043873"/>
+  <rect x="326" y="298" width="188" height="16" rx="8" fill="#4F9CF9"/>
+  <rect x="356" y="336" width="128" height="16" rx="8" fill="#C8D9F3"/>
+  <path d="M286 310H166M554 310h120M420 188V96M420 432v92" stroke="#4F9CF9" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 18"/>
+  <rect x="86" y="260" width="126" height="100" rx="24" fill="white"/>
+  <rect x="628" y="260" width="126" height="100" rx="24" fill="white"/>
+  <rect x="357" y="46" width="126" height="100" rx="24" fill="white"/>
+  <rect x="357" y="474" width="126" height="100" rx="24" fill="white"/>
+  <circle cx="149" cy="310" r="24" fill="#FFE492"/>
+  <circle cx="691" cy="310" r="24" fill="#043873"/>
+  <circle cx="420" cy="96" r="24" fill="#4F9CF9"/>
+  <circle cx="420" cy="524" r="24" fill="#FFE492"/>
+  <path d="M410 96l8 8 16-20" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M681 310l8 8 16-20" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

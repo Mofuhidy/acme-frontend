@@ -1,0 +1,38 @@
+<svg width="1080" height="760" viewBox="0 0 1080 760" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Whitepace dashboard mockup</title>
+  <desc id="desc">A blue and white project management dashboard with task cards, charts, and team activity.</desc>
+  <rect width="1080" height="760" rx="48" fill="#F4F8FF"/>
+  <rect x="62" y="64" width="956" height="632" rx="34" fill="white" stroke="#D7E7FF" stroke-width="4"/>
+  <rect x="62" y="64" width="956" height="92" rx="34" fill="#043873"/>
+  <circle cx="118" cy="111" r="14" fill="#FFE492"/>
+  <circle cx="160" cy="111" r="14" fill="#4F9CF9"/>
+  <circle cx="202" cy="111" r="14" fill="#B8D8FF"/>
+  <rect x="754" y="94" width="198" height="34" rx="17" fill="white" fill-opacity=".18"/>
+  <rect x="112" y="205" width="274" height="424" rx="26" fill="#F7FAFF"/>
+  <rect x="430" y="205" width="538" height="180" rx="26" fill="#E9F2FF"/>
+  <rect x="430" y="421" width="250" height="208" rx="26" fill="#F7FAFF"/>
+  <rect x="718" y="421" width="250" height="208" rx="26" fill="#F7FAFF"/>
+  <rect x="144" y="244" width="168" height="22" rx="11" fill="#043873"/>
+  <rect x="144" y="295" width="200" height="18" rx="9" fill="#9DBDE9"/>
+  <rect x="144" y="336" width="178" height="18" rx="9" fill="#9DBDE9"/>
+  <rect x="144" y="377" width="214" height="18" rx="9" fill="#9DBDE9"/>
+  <rect x="144" y="460" width="194" height="112" rx="20" fill="white"/>
+  <circle cx="183" cy="516" r="26" fill="#4F9CF9"/>
+  <path d="M176 516l6 6 13-16" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="228" y="493" width="82" height="16" rx="8" fill="#043873"/>
+  <rect x="228" y="527" width="104" height="14" rx="7" fill="#9DBDE9"/>
+  <rect x="470" y="245" width="184" height="22" rx="11" fill="#043873"/>
+  <rect x="470" y="300" width="450" height="34" rx="17" fill="white"/>
+  <rect x="494" y="310" width="142" height="14" rx="7" fill="#4F9CF9"/>
+  <rect x="662" y="310" width="210" height="14" rx="7" fill="#C8D9F3"/>
+  <path d="M484 356c48-56 104-28 154-52 74-36 112-1 168 16 42 13 78 1 118-38" stroke="#4F9CF9" stroke-width="12" stroke-linecap="round"/>
+  <rect x="468" y="463" width="150" height="26" rx="13" fill="#043873"/>
+  <rect x="468" y="522" width="172" height="20" rx="10" fill="#C8D9F3"/>
+  <rect x="468" y="564" width="118" height="20" rx="10" fill="#C8D9F3"/>
+  <circle cx="808" cy="521" r="52" fill="#FFE492"/>
+  <path d="M808 469a52 52 0 0150 66l-50-14V469z" fill="#4F9CF9"/>
+  <path d="M808 521l-45 28a52 52 0 0145-80v52z" fill="#043873"/>
+  <circle cx="892" cy="567" r="18" fill="#4F9CF9"/>
+  <circle cx="936" cy="567" r="18" fill="#FFE492"/>
+  <circle cx="848" cy="567" r="18" fill="#043873"/>
+</svg>
