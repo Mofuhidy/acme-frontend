@@ -1,109 +1,151 @@
-# whitepace SaaS Landing Page
+<a name="readme-top"></a>
 
-A production-quality SaaS landing page implementation built using **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**. It matches the layout and design across desktop, tablet, and mobile viewports.
+<div align="center">
+  <br/>
+  <h3><b>whitepace SaaS Landing Page</b></h3>
+</div>
 
-## 🔗 Live Deployment
-Once deployed, you can access the live application at:
-- **Vercel Production URL**: [https://acme-frontend.vercel.app](https://acme-frontend.vercel.app) *(or your Vercel deployment URL)*
+# 📗 Table of Contents
 
----
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-## 🚀 Setup & Installation
+# 📖 whitepace SaaS Landing Page <a name="about-project"></a>
+
+**whitepace SaaS Landing Page** is a production-quality frontend implementation of the whitepace project management landing page. It is optimized to closely match design mockups across desktop, tablet, and mobile viewports.
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://nextjs.org/">Next.js (App Router)</a></li>
+    <li><a href="https://react.dev/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+    <li><a href="https://typescriptlang.org/">TypeScript</a></li>
+  </ul>
+</details>
+
+### Key Features <a name="key-features"></a>
+
+- **Responsive Viewport Layouts**: Structured to transition smoothly across mobile, tablet, and desktop viewports, strictly aligning with design mockup specifications.
+- **Scroll-Snapping Pricing Carousel**: Native touch-friendly swipe carousel on small viewports with custom interactive pagination dots.
+- **Custom CSS Animations**: Interactivity featuring entrance reveal animations, hover lift effects, and floating integration graphics.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://acme-frontend.vercel.app)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) (v18.x or later) installed on your system.
 
-### Steps
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd acme-frontend
-   ```
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-3. **Run the local development server:**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+You need Node.js (v18.x or later) installed on your system.
 
----
+### Setup
 
-## 🛠️ Development & Build Commands
+Clone this repository to your desired folder:
 
-- **Start dev server:** `npm run dev`
-- **Lint check:** `npm run lint`
-- **Build production bundle:** `npm run build`
-- **Run contract tests:** `npm run test`
-
----
-
-## 📦 Component Structure
-
-The application is structured logically into reusable, semantic React components:
-
-```txt
-src/
-  app/
-    globals.css         # Main stylesheet with theme and animation definitions
-    layout.tsx          # Root HTML skeleton using Next.js Metadata API
-    page.tsx            # Landing page layout orchestrating sections
-  components/
-    layout/
-      navbar.tsx        # Responsive header with sticky behaviour & active section highlights
-      footer.tsx        # Semantic footer block with structural links
-      scroll-progress.tsx # Scroll progress indicator
-    sections/
-      hero.tsx          # Dynamic responsive hero heading and CTA
-      trusted-logos.tsx # Sponsor logos display (in original colors)
-      features.tsx      # Alternating row sections with grid layout and responsive orders
-      pricing.tsx       # Snap scroll carousel for mobile/tablet & grid columns for desktop
-      integrations.tsx  # Zapier orbit layout with left/right column swaps
-      testimonials.tsx  # User feedback cards with star reviews and arrow styling
-      cta.tsx           # Call-To-Action wave section with single primary button
-    ui/
-      button.tsx        # Accessible action buttons
-      container.tsx     # Fluid width responsive layout wrapper
-      reveal.tsx        # Intersection-Observer viewport animations
-      highlighted-heading.tsx # Yellow organic scribble headings
-      yellow-dash.tsx   # Double-stroke dash SVG scribble
-  content/
-    landing-page.ts     # Centralized configuration file hosting all page data copy
-  lib/
-    landing-sections.ts # Tracks active viewport sections and order IDs
+```sh
+  git clone https://github.com/mofuhidy/acme-frontend.git
+  cd acme-frontend
 ```
 
----
+### Install
 
-## 🎬 Animation Implementation Approach
+Install all project dependencies with:
 
-Animations have been carefully structured to be fluid, modern, and performant without creating distractions:
-1. **Entrance Animations**: Wrapped in the custom `<Reveal>` component, which utilizes the browser's native **Intersection Observer API** to trigger subtle class-based viewport fades and translate offsets as cards/headings scroll into view.
-2. **Subtle Floating effect**: Implemented keyframes-based CSS float animations in `globals.css` applied directly to the integrations orbit graphics, providing a dynamic "living" feel to page graphics.
-3. **Hover States**: Applied transitions for all interactive elements (buttons, testimonials, sponsors, features), lifting and scaling them (`scale-[1.02]`, `-translate-y-1`) smoothly on hover.
-4. **Reduced Motion A11y**: Enforced a global CSS media block query (`prefers-reduced-motion: reduce`) which disables/reduces all animations and transitions when requested by OS settings.
+```sh
+  npm install
+```
 
----
+### Usage
 
-## ⚙️ Brief Technical Summary
+To run the local development server, execute:
 
-### Component Architecture Decisions
-- Configured a **centralized configuration file** (`landing-page.ts`) to act as the single source of truth for copywriting text, pricing schemas, logos, and testimonials. This makes future localization, scaling, and maintenance simple and fast.
-- UI elements are split from major page sections to maintain clean files, reusability, and modular test coverage.
+```sh
+  npm run dev
+```
 
-### Responsiveness Approach
-- Adopted a **mobile-first design strategy**. Grid layouts stack cleanly on mobile/tablet viewports and swap to side-by-side structures at tailwind breakpoints (`md` and `lg`).
-- Built a **snap-scrolling pricing carousel** on mobile and tablet (below `lg` breakpoint) utilizing browser-native CSS scroll snapping, eliminating heavy third-party carousel dependencies while maintaining smooth, native swipe gestures and indicator dots.
+### Run tests
 
-### Accessibility (A11y) Considerations
-- Implemented **Semantic HTML** (such as `<main>`, `<section>`, `<nav>`, `<figure>`, and `<header>`).
-- Included a **Skip to Content link** at the top level to support keyboard screen readers.
-- Outlined explicit hover/focus visible rings around buttons and links.
-- Set descriptive `aria-label` tags on buttons, icons, and menus.
+To run the landing page content contract tests, execute:
 
-### Performance Optimizations
-- Integrated Next.js `next/image` to serve modern WebP image formats, automatically resizing files, preventing layout shifts (CLS), and utilizing lazy loading.
-- Used CSS-first animations to keep main thread execution free and fluid.
-- Kept third-party library overhead to a minimum.
+```sh
+  npm run test
+```
+
+### Deployment
+
+To deploy this project to Vercel, run:
+
+```sh
+  npx vercel --prod
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **moFuhidy**
+
+- GitHub: [@mofuhidy](https://github.com/mofuhidy)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Dark Mode Support**
+- [ ] **Interactive FAQ Accordions**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/mofuhidy/acme-frontend/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project, please give it a ⭐️!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgements <a name="acknowledgements"></a>
+
+We would like to thank the whitepace design team for providing the high-fidelity mockups.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
