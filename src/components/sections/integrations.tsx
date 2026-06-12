@@ -13,7 +13,7 @@ function Integrations() {
   return (
     <section id="integrations" className="relative isolate overflow-hidden bg-[#043873] py-20 text-white sm:py-28">
       {/* Decorative wave lines on the right */}
-      <div className="absolute -right-24 top-1/2 -translate-y-1/2 -z-10 pointer-events-none select-none w-[55%] sm:w-[45%] md:w-[40%] opacity-60">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 -z-10 pointer-events-none select-none w-full opacity-50">
         <img
           src="/Element.svg"
           alt=""
