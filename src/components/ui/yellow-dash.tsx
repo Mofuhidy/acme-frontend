@@ -9,6 +9,8 @@ export function YellowDash({ className, ...props }: React.ComponentPropsWithoutR
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      aria-hidden="true"
+      focusable="false"
       {...props}
     >
       {/* Organic hand-drawn double stroke */}

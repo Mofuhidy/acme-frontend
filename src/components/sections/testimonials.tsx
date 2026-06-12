@@ -41,6 +41,7 @@ function Testimonials() {
                         alt={testimonial.author}
                         fill
                         className="object-cover"
+                        sizes="48px"
                         loading="lazy"
                       />
                     </div>

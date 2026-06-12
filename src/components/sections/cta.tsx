@@ -9,7 +9,7 @@ function Cta() {
   const { cta } = siteConfig;
 
   return (
-    <section id="pricing" className="bg-brand-navy py-20 text-white sm:py-28">
+    <section id="cta" className="bg-brand-navy py-20 text-white sm:py-28">
       <Container>
         <Reveal className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-yellow">
