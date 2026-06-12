@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 
+import { YellowDash } from "@/components/ui/yellow-dash";
+
 function Hero() {
   const { hero } = siteConfig;
 
@@ -21,7 +23,16 @@ function Hero() {
             {hero.badge}
           </p>
           <h1 className="mt-7 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-            {hero.title}
+            {hero.title.split(/(Management)/i).map((part, index) =>
+              part.toLowerCase() === "management" ? (
+                <span key={index} className="relative inline-block whitespace-nowrap">
+                  {part}
+                  <YellowDash className="absolute -bottom-2.5 left-0 w-full h-auto text-brand-yellow" />
+                </span>
+              ) : (
+                part
+              )
+            )}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/76">
             {hero.description}

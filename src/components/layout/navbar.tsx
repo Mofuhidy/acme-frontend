@@ -18,18 +18,16 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { Logo } from "@/components/ui/logo";
+
 function BrandMark() {
   return (
     <Link
       href="#hero"
-      className="group inline-flex items-center gap-2.5 rounded-lg text-white outline-none transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-white/40"
+      className="group inline-flex items-center rounded-lg text-white outline-none transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-white/40"
       aria-label="whitepace home"
     >
-      <span className="relative grid size-8 place-items-center">
-        <span className="absolute h-5 w-5 rotate-45 rounded-[5px] bg-white" />
-        <span className="absolute h-4 w-4 -translate-x-1 -translate-y-1 rotate-45 rounded-[4px] bg-brand-blue" />
-      </span>
-      <span className="text-xl font-bold tracking-tight">{siteConfig.name}</span>
+      <Logo variant="light" className="h-6.5 w-auto sm:h-7.5" />
     </Link>
   );
 }
