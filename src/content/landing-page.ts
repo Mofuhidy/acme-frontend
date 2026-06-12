@@ -156,7 +156,11 @@ export const siteConfig = {
   } satisfies HeroContent,
   trustedLogos: [
     { name: "Apple", shortName: "Apple", src: "/sponsors/Apple.png" },
-    { name: "Microsoft", shortName: "Microsoft", src: "/sponsors/Microsoft.png" },
+    {
+      name: "Microsoft",
+      shortName: "Microsoft",
+      src: "/sponsors/Microsoft.png",
+    },
     { name: "Slack", shortName: "Slack", src: "/sponsors/Slack.png" },
     { name: "Google", shortName: "Google", src: "/sponsors/Google.png" },
   ] satisfies TrustedLogo[],
@@ -293,7 +297,8 @@ export const siteConfig = {
     {
       value: "320k+",
       label: "Active teams",
-      description: "Planning launches, client work, operations, and internal projects.",
+      description:
+        "Planning launches, client work, operations, and internal projects.",
     },
     {
       value: "14M",
@@ -303,7 +308,8 @@ export const siteConfig = {
     {
       value: "42%",
       label: "Faster planning",
-      description: "Less time chasing updates and more time moving work forward.",
+      description:
+        "Less time chasing updates and more time moving work forward.",
     },
     {
       value: "99.9%",

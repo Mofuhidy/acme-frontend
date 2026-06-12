@@ -25,9 +25,7 @@ function FeatureRow({ feature }: FeatureRowProps) {
   const ctaLabel = featureCtaLabels[feature.id] || "Learn more";
   
   // Determine if we should render a light blue placeholder box or an image
-  const isPlaceholder = 
-    feature.id === "project-management" || 
-    feature.id === "extension";
+  const isPlaceholder = feature.id === "project-management";
 
   return (
     <div

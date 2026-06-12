@@ -11,9 +11,16 @@ function Integrations() {
   const { integrations } = siteConfig;
 
   return (
-    <section id="integrations" className="relative overflow-hidden bg-[#043873] py-20 text-white sm:py-28">
-      {/* Subtle background wave patterns overlay */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" />
+    <section id="integrations" className="relative isolate overflow-hidden bg-[#043873] py-20 text-white sm:py-28">
+      {/* Decorative wave lines on the right */}
+      <div className="absolute -right-24 top-1/2 -translate-y-1/2 -z-10 pointer-events-none select-none w-[55%] sm:w-[45%] md:w-[40%] opacity-60">
+        <img
+          src="/Element.svg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-auto"
+        />
+      </div>
 
       <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
         {/* Graphic Column (Left on desktop, bottom on mobile) */}

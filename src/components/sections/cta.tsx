@@ -11,14 +11,19 @@ function Cta() {
   const { cta } = siteConfig;
 
   return (
-    <section id="cta" className="relative isolate overflow-visible bg-brand-navy py-20 text-white sm:py-28">
-      <div className="absolute -left-16 -top-12 -bottom-12 -z-10 pointer-events-none select-none sm:-left-20 md:-left-24">
+    <section
+      id="cta"
+      className="relative isolate overflow-visible bg-brand-navy py-20 text-white sm:py-28">
+      <div className="absolute -left-16 -top-64 bottom-12 -z-10 pointer-events-none select-none sm:-left-20 md:-left-24">
         <CtaWaves className="h-[calc(100%+6rem)] w-auto" />
       </div>
       <Container>
         <Reveal className="mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold tracking-tight sm:text-6xl leading-tight">
-            <HighlightedHeading text={cta.title} highlightColor="text-[#A7CEFC]" />
+            <HighlightedHeading
+              text={cta.title}
+              highlightColor="text-[#A7CEFC]"
+            />
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/76">
             {cta.description}
@@ -27,8 +32,7 @@ function Cta() {
             <Button
               asChild
               size="lg"
-              className="h-13 rounded-lg bg-brand-blue px-7 text-base text-white shadow-xl shadow-brand-blue/20 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-blue/90"
-            >
+              className="h-13 rounded-lg bg-brand-blue px-7 text-base text-white shadow-xl shadow-brand-blue/20 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-brand-blue/90">
               <a href={cta.primaryCta.href}>
                 {cta.primaryCta.label}
                 <ArrowRight className="size-4" />
