@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://acme-frontend.vercel.app)
+- [Live Demo Link](https://acme-frontend-mofuhidy.vercel.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
