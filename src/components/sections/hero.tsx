@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import { siteConfig } from "@/content/landing-page";
@@ -18,10 +19,10 @@ function Hero() {
       </div>
       <Container className="grid min-h-[calc(100svh-5rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:py-24">
         <div className="mx-auto flex max-w-2xl flex-col items-center text-center lg:items-start lg:text-left lg:mx-0">
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-brand-navy sm:text-6xl lg:text-7.5xl">
+          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-brand-blue sm:text-6xl lg:text-7.5xl">
             {hero.title}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-brand-blue">
             {hero.description}
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start w-full sm:w-auto">
@@ -39,7 +40,17 @@ function Hero() {
 
         <div className="relative w-full max-w-[550px] mx-auto lg:max-w-none">
           <div className="absolute -inset-5 rounded-[2rem] bg-brand-blue/5 blur-3xl" />
-          <div className="relative rounded-[1.75rem] border border-slate-200 bg-[#C4DEFD] aspect-4/3 w-full shadow-lg shadow-slate-200/50" />
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/50">
+            <Image
+              src={hero.image.src}
+              alt={hero.image.alt}
+              width={hero.image.width}
+              height={hero.image.height}
+              className="h-auto w-full"
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              priority
+            />
+          </div>
         </div>
       </Container>
     </section>
