@@ -1,0 +1,25 @@
+<svg width="840" height="620" viewBox="0 0 840 620" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Team collaboration network</title>
+  <desc id="desc">Connected team members collaborating around shared notes.</desc>
+  <rect width="840" height="620" rx="40" fill="#F7FAFF"/>
+  <circle cx="420" cy="310" r="142" fill="#E9F2FF"/>
+  <path d="M258 310h324M420 148v324M305 195l230 230M535 195L305 425" stroke="#C8D9F3" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="420" cy="310" r="74" fill="white"/>
+  <rect x="370" y="282" width="100" height="16" rx="8" fill="#043873"/>
+  <rect x="352" y="320" width="136" height="12" rx="6" fill="#4F9CF9"/>
+  <rect x="374" y="350" width="92" height="12" rx="6" fill="#C8D9F3"/>
+  <circle cx="258" cy="310" r="54" fill="#4F9CF9"/>
+  <circle cx="582" cy="310" r="54" fill="#FFE492"/>
+  <circle cx="420" cy="148" r="54" fill="#043873"/>
+  <circle cx="420" cy="472" r="54" fill="#4F9CF9"/>
+  <circle cx="305" cy="195" r="42" fill="white" stroke="#D7E7FF" stroke-width="8"/>
+  <circle cx="535" cy="425" r="42" fill="white" stroke="#D7E7FF" stroke-width="8"/>
+  <circle cx="258" cy="296" r="16" fill="white"/>
+  <rect x="230" y="326" width="56" height="14" rx="7" fill="white"/>
+  <circle cx="582" cy="296" r="16" fill="#043873"/>
+  <rect x="554" y="326" width="56" height="14" rx="7" fill="#043873"/>
+  <circle cx="420" cy="134" r="16" fill="white"/>
+  <rect x="392" y="164" width="56" height="14" rx="7" fill="white"/>
+  <circle cx="420" cy="458" r="16" fill="white"/>
+  <rect x="392" y="488" width="56" height="14" rx="7" fill="white"/>
+</svg>
