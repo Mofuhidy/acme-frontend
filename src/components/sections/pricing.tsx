@@ -59,7 +59,7 @@ function Pricing() {
             <HighlightedHeading text="Choose Your Plan" />
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            Whether you want to get organized, keep your personal life on track, or boost workplace productivity, whitepace has the right plan for you.
+            Whether you want to get organized, keep your personal life on track, or boost workplace productivity, Evernote has the right plan for you.
           </p>
         </Reveal>
 
